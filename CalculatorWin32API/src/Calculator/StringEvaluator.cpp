@@ -16,8 +16,8 @@ namespace Calculator
 		bool hasDoubles = false;
 		bool hasMultiOrDivide = false;
 		bool firstNumber = true;
-		int num1 = 0;
-		int num2 = 0;
+		double num1 = 0;
+		double num2 = 0;
 		Operation op = Operation::NONE;
 
 		for (const char& ch : str)
@@ -81,6 +81,9 @@ namespace Calculator
 			return num1 + num2;
 		else if (op == Operation::SUBTRACT)
 			return num1 - num2;
+		else
+			//TODO: Add correct exception handling (Do not let the user type invalid characters)
+			throw std::invalid_argument("Invalid operation!");
 
 	}
 

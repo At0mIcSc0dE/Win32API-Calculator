@@ -17,8 +17,8 @@ namespace Calculator
 	{
 	public:
 		virtual void Resize(const int& width, const int& height) = 0;
-		virtual void Show() = 0;
-		virtual void Hide() = 0;
+		virtual void Show() const = 0;
+		virtual void Hide() const = 0;
 		virtual void SetText(const LPCWSTR& text) = 0;
 	};
 

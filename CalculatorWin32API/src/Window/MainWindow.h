@@ -10,7 +10,7 @@ namespace Calculator
 	{
 	public:
 		virtual LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam) override;
-		virtual PCWSTR ClassName() const override { return L"MainWindowClass"; }
+		virtual PCWSTR ClassName() const override { return L"MAINWINDOWCLASS"; }
 
 		MainWindow() = default;
 

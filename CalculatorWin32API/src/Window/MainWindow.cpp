@@ -5,6 +5,9 @@
 
 #include "Widgets/Button.h"
 
+#define BUTTONTESTID		0x1
+#define BUTTONTESTID2		0x2
+
 
 namespace Calculator
 {
@@ -22,12 +25,30 @@ namespace Calculator
 		}
 		case WM_LBUTTONDOWN:
 		{
-			Button btn(L"Hello", { 10, 10, 90, 30 }, m_hwnd, WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON);
+			Button btn(L"Btn1", { 10, 10, 90, 30 }, m_hwnd, BUTTONTESTID);
+			Button btn2(L"Btn2", { 100, 10, 90, 30 }, m_hwnd, BUTTONTESTID2);
 		}
 		return 0;
 		case WM_COMMAND:
 		{
-			MessageBox(NULL, L"JFDDSKLJF", L"JFKD", NULL);
+
+			/**
+			* TODO:
+			*	Add something like an event dispatcher which checks what button was pressed
+			*	Execute function argument if event matches target event
+			*
+			* GOAL:
+			*	Eliminate the need to create button IDs
+			*/
+
+			if (LOWORD(wParam) == BUTTONTESTID)
+			{
+				MessageBox(NULL, L"Button 1 pressed!", L"1", NULL);
+			}
+			else if (LOWORD(wParam) == BUTTONTESTID2)
+			{
+				MessageBox(NULL, L"Button 2 pressed!", L"2", NULL);
+			}
 		}
 		return 0;
 		case WM_PAINT:
