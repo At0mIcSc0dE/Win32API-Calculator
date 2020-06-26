@@ -3,21 +3,25 @@
 #include "Window/MainWindow.h"
 
 
-class Application
+namespace Calculator
 {
-protected:
-	Application() {}
-public:
-	
-	bool Init(int nCmdShow);
-	void Run();
-	
-	static Application& GetApplication() { return *m_Application; }
 
-	~Application();
+	class Application
+	{
+	protected:
+		Application() {}
+	public:
 
-private:
-	static Application* m_Application;
-	MainWindow m_Win;
-};
+		bool Init(int nCmdShow);
+		void Run();
 
+		static Application& GetApplication() { return *m_Application; }
+
+		~Application();
+
+	private:
+		static Application* m_Application;
+		MainWindow m_Win;
+	};
+
+}

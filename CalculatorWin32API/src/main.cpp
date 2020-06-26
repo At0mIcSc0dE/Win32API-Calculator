@@ -4,7 +4,7 @@
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
-	Application& app = Application::GetApplication();
+	Calculator::Application& app = Calculator::Application::GetApplication();
 	app.Init(nCmdShow);
 	app.Run();
 

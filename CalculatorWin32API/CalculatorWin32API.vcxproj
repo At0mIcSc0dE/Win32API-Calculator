@@ -19,15 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Widgets\Widget.cpp" />
+    <ClCompile Include="src\Widgets\Button.cpp" />
     <ClCompile Include="src\Calculator\Application.cpp" />
+    <ClCompile Include="src\Calculator\StringEvaluator.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Window\MainWindow.cpp" />
-    <ClCompile Include="src\Calculator\StringEvaluator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Widgets\Widget.h" />
+    <ClInclude Include="src\Widgets\Button.h" />
     <ClInclude Include="src\Calculator\Application.h" />
     <ClInclude Include="src\Window\BaseWindow.hpp" />
     <ClInclude Include="src\pch.h" />

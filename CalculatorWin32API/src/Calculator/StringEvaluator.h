@@ -3,10 +3,18 @@
 #include "pch.h"
 
 
-class StringEvaluator
+namespace Calculator
 {
-public:
-	StringEvaluator() = delete;
-	
-};
 
+	class StringEvaluator
+	{
+	public:
+		StringEvaluator() = default;
+
+		static double EvaluateString(const std::string& str);
+
+	private:
+		static bool IsNumeric(const char& str);
+	};
+
+}
