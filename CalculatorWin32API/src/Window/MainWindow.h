@@ -7,6 +7,7 @@
 #include "BaseWindow.hpp"
 #include "Widgets/Button.h"
 
+
 namespace Calculator
 {
 
@@ -34,13 +35,15 @@ namespace Calculator
 		*
 		* @returns the name of the window class, user defined
 		*/
-		virtual PCWSTR ClassName() const override { return L"MAINWINDOWCLASS"; }
+		virtual PCWSTR ClassName() const override { return L"MAINWINDOW"; }
 
-		MainWindow() = default;
+		MainWindow()
+			:m_Widgets{} {}
+
+		std::unordered_map<const char*, Widget&>& GetWidgets() { return m_Widgets; }
 
 	private:
-		Button btn;
-		Button btn2;
+		std::unordered_map<const char*, Widget&> m_Widgets;
 	};
 
 }

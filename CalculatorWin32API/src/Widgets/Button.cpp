@@ -20,6 +20,15 @@ namespace Calculator
 			parent, (HMENU)m_ButtonID, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL);
 	}
 
+	void Button::Init(const LPCWSTR& name, const int& x, const int& y, const int& width, const int& height, HWND& parent, const int& flags)
+	{
+		m_ButtonID = g_NextButtonID;
+		++g_NextButtonID;
+
+		m_hwndButton = CreateWindow(L"BUTTON", name, flags, x, y, width, height,
+			parent, (HMENU)m_ButtonID, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL);
+	}
+
 	void Button::Resize(const int& width, const int& height)
 	{
 		//TODO: To be implemented

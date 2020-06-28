@@ -34,6 +34,26 @@ namespace Calculator
 		);
 
 		/**
+		* Should be called to construct window
+		*
+		* @param name is the button text
+		* @param x is the button's x-position
+		* @param y is the button's y-position
+		* @param width is the button's width
+		* @param height is the button's height
+		* @param parent is the parent, often the main window
+		*/
+		void Init(
+			_In_ const LPCWSTR& name,
+			_In_ const int& x,
+			_In_ const int& y,
+			_In_ const int& width,
+			_In_ const int& height,
+			_In_ HWND& parent,
+			_In_opt_ const int& flags = WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON
+		);
+
+		/**
 		* Changes button's width and height
 		*
 		* @param width is the target button width
@@ -56,6 +76,7 @@ namespace Calculator
 
 		/**
 		* Sets text which is displayed when the button is rendered
+		*
 		* @param text is the new button text
 		*/
 		virtual void SetText(
@@ -63,7 +84,22 @@ namespace Calculator
 		) override;
 
 		/**
+		* Function to get the current widget type, in this case Button
+		*
+		* @returns the widget's type
+		*/
+		virtual const WidgetType GetWidgetType() const { return GetStaticWidgetType(); }
+
+		/**
+		* Static function to get the current widget type, in this case Button
+		*
+		* @returns the widget's type
+		*/
+		static const WidgetType GetStaticWidgetType() { return WidgetType::Button; };
+
+		/**
 		* Getter for buttonID
+		*
 		* @returns the current button's buttonID
 		*/
 		int GetButtonID() const { return m_ButtonID; }

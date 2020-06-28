@@ -65,7 +65,7 @@ namespace Calculator
 			return (m_hwnd ? TRUE : FALSE);
 		}
 
-		HWND GetMainWindow() const { return m_hwnd; }
+		HWND GetHWND() const { return m_hwnd; }
 
 	protected:
 		HWND m_hwnd;

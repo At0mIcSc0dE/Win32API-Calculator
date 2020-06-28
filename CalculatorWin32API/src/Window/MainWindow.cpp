@@ -19,8 +19,18 @@ namespace Calculator
 		{
 		case WM_CREATE:
 		{
+			Button btn;
+			Button btn2;
 			btn.Init(L"1", { 10, 10, 90, 30 }, m_hwnd);
 			btn2.Init(L"2", { 100, 10, 90, 30 }, m_hwnd);
+
+			//m_Widgets.insert("btn", btn);
+			//m_Widgets.insert("btn2", btn2);
+
+			for (auto& widget : m_Widgets)
+			{
+				MessageBox(NULL, L"WIDGETFOUND", L"", NULL);
+			}
 		}
 		return 0;
 		case WM_DESTROY:

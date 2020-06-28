@@ -6,3 +6,4 @@ I tested many new things which where unknown to me before, examples inculude:
 	A text file including a summary of what I've learned (this file)
 	"Propper" documentation (not sure if everything is written correctly, e.g. IntelliSense displays the * in the docstring if I didn't provide it with any @param/@returns...)
 	New lines for parameters in declaration (not sure where to put override, const...)
+	Variadic template arguments (not sure if they were necessary, @see Calculator::Application::AddWidget())
