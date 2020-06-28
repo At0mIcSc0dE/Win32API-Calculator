@@ -1,12 +1,13 @@
+/**
+* File containing the MainWindow class' definitions
+*/
+
 #pragma once
 #include "pch.h"
 #include "MainWindow.h"
 #include "Calculator/StringEvaluator.h"
 
 #include "Widgets/Button.h"
-
-#define BUTTONTESTID		0x1
-#define BUTTONTESTID2		0x2
 
 
 namespace Calculator
@@ -16,6 +17,12 @@ namespace Calculator
 	{
 		switch (uMsg)
 		{
+		case WM_CREATE:
+		{
+			btn.Init(L"1", { 10, 10, 90, 30 }, m_hwnd);
+			btn2.Init(L"2", { 100, 10, 90, 30 }, m_hwnd);
+		}
+		return 0;
 		case WM_DESTROY:
 			PostQuitMessage(0);
 			return 0;
@@ -25,8 +32,7 @@ namespace Calculator
 		}
 		case WM_LBUTTONDOWN:
 		{
-			Button btn(L"Btn1", { 10, 10, 90, 30 }, m_hwnd, BUTTONTESTID);
-			Button btn2(L"Btn2", { 100, 10, 90, 30 }, m_hwnd, BUTTONTESTID2);
+
 		}
 		return 0;
 		case WM_COMMAND:
@@ -41,11 +47,11 @@ namespace Calculator
 			*	Eliminate the need to create button IDs
 			*/
 
-			if (LOWORD(wParam) == BUTTONTESTID)
+			if (LOWORD(wParam) == 0x0)
 			{
 				MessageBox(NULL, L"Button 1 pressed!", L"1", NULL);
 			}
-			else if (LOWORD(wParam) == BUTTONTESTID2)
+			else if (LOWORD(wParam) == 0x1)
 			{
 				MessageBox(NULL, L"Button 2 pressed!", L"2", NULL);
 			}

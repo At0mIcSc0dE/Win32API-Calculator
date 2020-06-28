@@ -1,21 +1,23 @@
+/**
+* File containing the Button class' definitions
+*/
+
 #include "pch.h"
 #include "Button.h"
 
 
+int g_NextButtonID = 0x0;
+
 namespace Calculator
 {
-	Button::Button(const LPCWSTR& name, const Rect& rect, HWND& parent, const int& buttonID, const int& flags)
-		:m_hwndButton(CreateWindow(L"BUTTON", name, flags, rect.x, rect.y, rect.width, rect.height,
-									parent, (HMENU)buttonID, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL))
+
+	void Button::Init(const LPCWSTR& name, const Rect& rect, HWND& parent, const int& flags)
 	{
+		m_ButtonID = g_NextButtonID;
+		++g_NextButtonID;
 
-	}
-
-	Button::Button(const LPCWSTR& name, const int& x, const int& y, const int& width, const int& height, HWND& parent, const int& buttonID, const int& flags)
-		:m_hwndButton(CreateWindow(L"BUTTON", name, flags, x, y, width, height,
-									parent, (HMENU)buttonID, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL))
-	{
-
+		m_hwndButton = CreateWindow(L"BUTTON", name, flags, rect.x, rect.y, rect.width, rect.height,
+			parent, (HMENU)m_ButtonID, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL);
 	}
 
 	void Button::Resize(const int& width, const int& height)

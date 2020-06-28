@@ -1,3 +1,7 @@
+/**
+* Precompiled header file
+*/
+
 #pragma once
 
 #include <Windows.h>

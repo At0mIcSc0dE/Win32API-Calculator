@@ -1,3 +1,7 @@
+/**
+* File containing the BaseWindow class' declarations and definitions
+*/
+
 #pragma once
 
 #include "pch.h"
