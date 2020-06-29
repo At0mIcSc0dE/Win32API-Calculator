@@ -40,10 +40,17 @@ namespace Calculator
 		MainWindow()
 			:m_Widgets{} {}
 
-		std::unordered_map<const char*, Widget&>& GetWidgets() { return m_Widgets; }
+		~MainWindow();
+
+		/**
+		* Getter for the std::unordered_map which stores all widgets
+		*
+		* @returns std::unordered_map of all widgets
+		*/
+		std::unordered_map<const wchar_t*, std::unique_ptr<Widget>>& GetWidgets() { return m_Widgets; }
 
 	private:
-		std::unordered_map<const char*, Widget&> m_Widgets;
+		std::unordered_map<const wchar_t*, std::unique_ptr<Widget>> m_Widgets;
 	};
 
 }

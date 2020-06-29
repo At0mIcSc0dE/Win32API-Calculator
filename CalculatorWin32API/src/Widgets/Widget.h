@@ -53,11 +53,17 @@ namespace Calculator
 		virtual void SetText(const LPCWSTR& text) = 0;
 
 		/**
-		* Function to get the current widget type, e.g. Button, Textbox, Checkbox...
+		* Gets the current widget type, e.g. Button, Textbox, Checkbox...
 		* @returns the widget's type
 		* @note this function needs to be implemented in every widget, along with a static function doing the same
 		*/
 		virtual const WidgetType GetWidgetType() const = 0;
+
+		/**
+		* Method to get the name of the current class
+		* @returns the name of the current class e.g. Widget, Button, Textbox...
+		*/
+		virtual const wchar_t* GetName() const { return L"Widget"; }
 	};
 
 }

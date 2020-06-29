@@ -11,7 +11,7 @@
 namespace Calculator
 {
 
-	class Button : Widget
+	class Button : public Widget
 	{
 	public:
 		/**
@@ -96,6 +96,13 @@ namespace Calculator
 		* @returns the widget's type
 		*/
 		static const WidgetType GetStaticWidgetType() { return WidgetType::Button; };
+
+		/**
+		* Method to get the name of the current class
+		*
+		* @returns "Button"
+		*/
+		virtual const wchar_t* GetName() const override { return L"Button"; }
 
 		/**
 		* Getter for buttonID
