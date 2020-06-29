@@ -45,14 +45,14 @@ namespace Calculator
 			*	Eliminate the need to create button IDs
 			*/
 
-			//if (LOWORD(wParam) == 0x0)
-			//{
-			//	MessageBox(NULL, L"Button 1 pressed!", L"1", NULL);
-			//}
-			//else if (LOWORD(wParam) == 0x1)
-			//{
-			//	MessageBox(NULL, L"Button 2 pressed!", L"2", NULL);
-			//}
+			if (LOWORD(wParam) == m_Widgets[L"btn1"]->GetID())
+			{
+				MessageBox(NULL, L"Button 1 pressed!", L"1", NULL);
+			}
+			else if (LOWORD(wParam) == m_Widgets[L"btn2"]->GetID())
+			{
+				MessageBox(NULL, L"Button 2 pressed!", L"2", NULL);
+			}
 		}
 		return 0;
 		case WM_PAINT:

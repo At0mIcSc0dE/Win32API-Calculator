@@ -64,6 +64,14 @@ namespace Calculator
 		* @returns the name of the current class e.g. Widget, Button, Textbox...
 		*/
 		virtual const wchar_t* GetName() const { return L"Widget"; }
+
+		/**
+		* Gets the current widget's ID which was defined in Application::AddWidget
+		*
+		*@see Calculator::Application::AddWidget
+		*@returns the current widget's ID
+		*/
+		virtual const int& GetID() const = 0;
 	};
 
 }

@@ -38,6 +38,8 @@ namespace Calculator
 		static Application& GetApplication() { return *m_Application; }
 
 		/**
+		* Adds a widget to the window (parent variable)
+		*
 		* @param name is the name which the widget will be accesible in the unordered_map
 		* @param args are the arguments to initialize the widget
 		* @returns false if incorrect arguments for WIDGET type were provided
@@ -66,7 +68,6 @@ namespace Calculator
 	template<typename WIDGET, typename ...Args>
 	inline bool Application::AddWidget(const wchar_t* name, Args ...args)
 	{
-		//WIDGET* widget = new WIDGET;
 		std::unique_ptr<WIDGET> widget = std::make_unique<WIDGET>();
 		widget->Init(args...);
 		m_Win.GetWidgets().insert({ name, std::move(widget) });
