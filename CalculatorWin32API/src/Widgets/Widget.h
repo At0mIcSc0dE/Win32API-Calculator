@@ -10,7 +10,7 @@ namespace Calculator
 	*/
 	enum class WidgetType
 	{
-		UNDEFINED = 0, Button, Textbox
+		UNDEFINED = 0, Button, Textfield
 	};
 
 	/**

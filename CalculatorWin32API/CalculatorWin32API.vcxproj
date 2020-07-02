@@ -28,6 +28,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Window\MainWindow.cpp" />
+    <ClCompile Include="src\Widgets\Textfield.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Widgets\Widget.h" />
@@ -37,6 +38,7 @@
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\Window\MainWindow.h" />
     <ClInclude Include="src\Calculator\StringEvaluator.h" />
+    <ClInclude Include="src\Widgets\Textfield.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ProjectInformation.txt" />
