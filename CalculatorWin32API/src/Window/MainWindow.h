@@ -6,6 +6,7 @@
 
 #include "BaseWindow.hpp"
 #include "Widgets/Button.h"
+#include "Widgets/Textfield.h"
 
 
 namespace Calculator
@@ -47,10 +48,12 @@ namespace Calculator
 		*
 		* @returns std::unordered_map of all widgets
 		*/
-		std::unordered_map<const wchar_t*, std::unique_ptr<Widget>>& GetWidgets() { return m_Widgets; }
+		//std::unordered_map<const wchar_t*, std::unique_ptr<Widget>>& GetWidgets() { return m_Widgets; }
+		std::vector<std::unique_ptr<Widget>>& GetWidgets() { return m_Widgets; }
 
 	private:
-		std::unordered_map<const wchar_t*, std::unique_ptr<Widget>> m_Widgets;
+		//std::unordered_map<const wchar_t*, std::unique_ptr<Widget>> m_Widgets;
+		std::vector<std::unique_ptr<Widget>> m_Widgets;
 	};
 
 }

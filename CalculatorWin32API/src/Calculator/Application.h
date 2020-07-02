@@ -48,7 +48,7 @@ namespace Calculator
 		* @warning currently does not return false when passing the wrong arguments
 		*/
 		template<typename WIDGET, typename... Args>
-		bool AddWidget(const wchar_t* name, Args... args);
+		bool AddWidget(Args... args);
 
 		/**
 		* Getter for MainWindow
@@ -66,11 +66,12 @@ namespace Calculator
 
 	
 	template<typename WIDGET, typename ...Args>
-	inline bool Application::AddWidget(const wchar_t* name, Args ...args)
+	inline bool Application::AddWidget(Args ...args)
 	{
 		std::unique_ptr<WIDGET> widget = std::make_unique<WIDGET>();
 		widget->Init(args...);
-		m_Win.GetWidgets().insert({ name, std::move(widget) });
+		//m_Win.GetWidgets().insert({ name, std::move(widget) });
+		m_Win.GetWidgets().emplace_back(std::move(widget));
 
 		return true;
 	}

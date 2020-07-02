@@ -47,13 +47,8 @@ namespace Calculator
 		virtual void Hide() const = 0;
 
 		/**
-		* Sets text which is displayed when the widget is rendered
-		* @param text is the new widget text
-		*/
-		virtual void SetText(const LPCWSTR& text) = 0;
-
-		/**
 		* Gets the current widget type, e.g. Button, Textbox, Checkbox...
+		*
 		* @returns the widget's type
 		* @note this function needs to be implemented in every widget, along with a static function doing the same
 		*/
@@ -61,6 +56,7 @@ namespace Calculator
 
 		/**
 		* Method to get the name of the current class
+		*
 		* @returns the name of the current class e.g. Widget, Button, Textbox...
 		*/
 		virtual const wchar_t* GetName() const { return L"Widget"; }
@@ -72,6 +68,9 @@ namespace Calculator
 		*@returns the current widget's ID
 		*/
 		virtual const int& GetID() const = 0;
+	protected:
+		static int s_NextID;
 	};
+
 
 }

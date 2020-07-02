@@ -15,14 +15,14 @@ namespace Calculator
 	{
 	public:
 		/**
-		* Button should be created in MainWindow.h and then Initialized in WM_CREATE
+		* Default constructor for button
 		*/
 		Button() = default;
 
 		/**
 		* Should be called to construct window
 		*
-		* @param name is the button text
+		* @param name is the button;s text
 		* @param rect is the button's transform
 		* @param parent is the parent, often the main window
 		*/
@@ -36,7 +36,7 @@ namespace Calculator
 		/**
 		* Should be called to construct window
 		*
-		* @param name is the button text
+		* @param name is the button;s text
 		* @param x is the button's x-position
 		* @param y is the button's y-position
 		* @param width is the button's width
@@ -79,9 +79,9 @@ namespace Calculator
 		*
 		* @param text is the new button text
 		*/
-		virtual void SetText(
+		void SetText(
 			_In_ const LPCWSTR& text
-		) override;
+		);
 
 		/**
 		* Function to get the current widget type, in this case Button
@@ -100,7 +100,7 @@ namespace Calculator
 		/**
 		* Method to get the name of the current class
 		*
-		* @returns "Button"
+		* @returns L"Button"
 		*/
 		virtual const wchar_t* GetName() const override { return L"Button"; }
 

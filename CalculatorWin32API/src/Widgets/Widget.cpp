@@ -4,5 +4,5 @@
 
 namespace Calculator
 {
-
+	int Widget::s_NextID = 0x0;
 }

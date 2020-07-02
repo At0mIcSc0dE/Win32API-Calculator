@@ -6,15 +6,13 @@
 #include "Button.h"
 
 
-int g_NextButtonID = 0x0;
-
 namespace Calculator
 {
 
 	void Button::Init(const LPCWSTR& name, const Rect& rect, HWND& parent, const int& flags)
 	{
-		m_ButtonID = g_NextButtonID;
-		++g_NextButtonID;
+		m_ButtonID = s_NextID;
+		++s_NextID;
 
 		m_hwndButton = CreateWindow(L"BUTTON", name, flags, rect.x, rect.y, rect.width, rect.height,
 			parent, (HMENU)m_ButtonID, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL);
@@ -22,8 +20,8 @@ namespace Calculator
 
 	void Button::Init(const LPCWSTR& name, const int& x, const int& y, const int& width, const int& height, HWND& parent, const int& flags)
 	{
-		m_ButtonID = g_NextButtonID;
-		++g_NextButtonID;
+		m_ButtonID = s_NextID;
+		++s_NextID;
 
 		m_hwndButton = CreateWindow(L"BUTTON", name, flags, x, y, width, height,
 			parent, (HMENU)m_ButtonID, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL);

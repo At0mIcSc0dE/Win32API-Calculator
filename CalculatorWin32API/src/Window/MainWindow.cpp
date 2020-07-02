@@ -3,6 +3,7 @@
 */
 
 #pragma once
+
 #include "pch.h"
 #include "MainWindow.h"
 #include "Calculator/StringEvaluator.h"
@@ -45,13 +46,23 @@ namespace Calculator
 			*	Eliminate the need to create button IDs
 			*/
 
-			if (LOWORD(wParam) == m_Widgets[L"btn1"]->GetID())
+			try
 			{
-				MessageBox(NULL, L"Button 1 pressed!", L"1", NULL);
+				if (LOWORD(wParam) == m_Widgets.at(0)->GetID())
+				{
+					MessageBox(NULL, L"Button 1 pressed!", L"btn1", NULL);
+				}
+				else if (LOWORD(wParam) == m_Widgets.at(1)->GetID())
+				{
+					MessageBox(NULL, L"Button 2 pressed!", L"btn2", NULL);
+				}
+				if (LOWORD(wParam) == m_Widgets.at(2)->GetID())
+				{
+					MessageBox(NULL, L"Textbox 1 pressed", L"txt1", NULL);
+				}
 			}
-			else if (LOWORD(wParam) == m_Widgets[L"btn2"]->GetID())
+			catch (const std::out_of_range&)
 			{
-				MessageBox(NULL, L"Button 2 pressed!", L"2", NULL);
 			}
 		}
 		return 0;
