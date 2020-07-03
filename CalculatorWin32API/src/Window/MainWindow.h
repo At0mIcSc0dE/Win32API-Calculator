@@ -16,6 +16,15 @@ namespace Calculator
 	class CL_API MainWindow : public BaseWindow<MainWindow>
 	{
 	public:
+
+		/**
+		* Mainwindow constructor, used to initialize m_Widgets
+		*
+		* @returns MainWindow instance
+		*/
+		MainWindow()
+			:m_Widgets{} {}
+
 		/**
 		* Function is called by WindowProc in BaseWindow class. 
 		* HandleMessages receives all window messages sent out by the operating system
@@ -63,15 +72,6 @@ namespace Calculator
 
 	private:
 		std::vector<std::unique_ptr<Widget>> m_Widgets;
-	
-	protected:
-		/**
-		* Mainwindow constructor, used to initialize m_Widgets
-		*
-		* @returns MainWindow instance
-		*/
-		MainWindow()
-			:m_Widgets{} {}
 	};
 
 }

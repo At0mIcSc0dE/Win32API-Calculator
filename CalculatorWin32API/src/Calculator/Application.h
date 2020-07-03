@@ -14,8 +14,7 @@ namespace Calculator
 	class CL_API Application
 	{
 	protected:
-		Application()
-			: m_Win() {}
+		Application() : m_Win() {}
 	public:
 		/**
 		* Function has to be called after getting an Application& using the Getter
