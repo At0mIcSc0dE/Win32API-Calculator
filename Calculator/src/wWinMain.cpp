@@ -5,7 +5,6 @@ int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR nCmdLi
 {
 	Sandbox sandbox;
 	sandbox.Init(nCmdShow);
-	sandbox.AddWidgets();
 	sandbox.Run();
 
 	return 0;

@@ -36,7 +36,7 @@ namespace Calculator
 		return 0;
 		case WM_COMMAND:
 		{
-
+			#pragma region Test
 			/**
 			* TODO:
 			*	Add something like an event dispatcher which checks what button was pressed
@@ -46,24 +46,28 @@ namespace Calculator
 			*	Eliminate the need to create button IDs
 			*/
 
-			try
-			{
-				if (LOWORD(wParam) == m_Widgets.at(0)->GetID())
-				{
-					MessageBox(NULL, L"Button 1 pressed!", L"btn1", NULL);
-				}
-				else if (LOWORD(wParam) == m_Widgets.at(1)->GetID())
-				{
-					MessageBox(NULL, L"Button 2 pressed!", L"btn2", NULL);
-				}
-				if (LOWORD(wParam) == m_Widgets.at(2)->GetID())
-				{
-					MessageBox(NULL, L"Textbox 1 pressed", L"txt1", NULL);
-				}
-			}
-			catch (const std::out_of_range&)
-			{
-			}
+			//try
+			//{
+			//	if (LOWORD(wParam) == m_Widgets.at(0)->GetID())
+			//	{
+			//		MessageBox(NULL, L"Button 1 pressed!", L"btn1", NULL);
+			//	}
+			//	else if (LOWORD(wParam) == m_Widgets.at(1)->GetID())
+			//	{
+			//		MessageBox(NULL, L"Button 2 pressed!", L"btn2", NULL);
+			//	}
+			//	if (LOWORD(wParam) == m_Widgets.at(2)->GetID())
+			//	{
+			//		MessageBox(NULL, L"Textbox 1 pressed", L"txt1", NULL);
+			//	}
+			//}
+			//catch (const std::out_of_range&)
+			//{
+			//}
+			#pragma endregion
+
+
+
 		}
 		return 0;
 		case WM_PAINT:

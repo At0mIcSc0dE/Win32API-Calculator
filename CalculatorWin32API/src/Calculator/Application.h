@@ -56,6 +56,9 @@ namespace Calculator
 		*/
 		const MainWindow& GetMainWindow() const { return m_Win; }
 
+		/**
+		* Destructor for application
+		*/
 		~Application();
 		
 	private:

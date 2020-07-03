@@ -9,6 +9,7 @@ Sandbox::Sandbox()
 bool Sandbox::Init(const int& nCmdShow)
 {
 	m_Application.Init(nCmdShow);
+	AddWidgets();
 	return true;
 }
 
