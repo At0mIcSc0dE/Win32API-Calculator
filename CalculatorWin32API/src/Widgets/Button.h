@@ -4,14 +4,14 @@
 
 #pragma once
 
+#include "Calculator/Core.h"
 #include "Widget.h"
-
 
 
 namespace Calculator
 {
 
-	class Button : public Widget
+	class CL_API Button : public Widget
 	{
 	public:
 		/**

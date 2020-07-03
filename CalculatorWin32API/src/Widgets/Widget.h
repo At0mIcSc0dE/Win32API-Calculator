@@ -1,14 +1,14 @@
 #pragma once
 
 #include "pch.h"
-
+#include "Calculator/Core.h"
 
 namespace Calculator
 {
 	/**
 	* Enum which defines all the existing Widgets
 	*/
-	enum class WidgetType
+	enum class CL_API WidgetType
 	{
 		UNDEFINED = 0, Button, Textfield
 	};
@@ -16,7 +16,7 @@ namespace Calculator
 	/**
 	* Struct which defines the widget's transform
 	*/
-	struct Rect
+	struct CL_API Rect
 	{
 		unsigned int x, y, width, height;
 	};
@@ -25,7 +25,7 @@ namespace Calculator
 	/**
 	* Any widget should be derived from this class
 	*/
-	class Widget
+	class CL_API Widget
 	{
 	public:
 		/**

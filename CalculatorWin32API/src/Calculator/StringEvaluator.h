@@ -1,12 +1,13 @@
 #pragma once
 
 #include "pch.h"
+#include "Calculator/Core.h"
 
 
 namespace Calculator
 {
 
-	class StringEvaluator
+	class CL_API StringEvaluator
 	{
 	public:
 		StringEvaluator() = default;

@@ -7,12 +7,13 @@
 #include "BaseWindow.hpp"
 #include "Widgets/Button.h"
 #include "Widgets/Textfield.h"
+#include "Calculator/Core.h"
 
 
 namespace Calculator
 {
 
-	class MainWindow : public BaseWindow<MainWindow>
+	class CL_API MainWindow : public BaseWindow<MainWindow>
 	{
 	public:
 		/**
@@ -50,6 +51,9 @@ namespace Calculator
 		*/
 		//std::unordered_map<const wchar_t*, std::unique_ptr<Widget>>& GetWidgets() { return m_Widgets; }
 		std::vector<std::unique_ptr<Widget>>& GetWidgets() { return m_Widgets; }
+
+		MainWindow(const MainWindow&) = delete;
+		MainWindow& operator=(const MainWindow&) = delete;
 
 	private:
 		//std::unordered_map<const wchar_t*, std::unique_ptr<Widget>> m_Widgets;

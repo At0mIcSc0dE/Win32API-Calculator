@@ -5,13 +5,14 @@
 #pragma once
 
 #include "pch.h"
+#include "Calculator/Core.h"
 
 
 namespace Calculator
 {
 
 	template<class DERIVED_TYPE>
-	class BaseWindow
+	class CL_API BaseWindow
 	{
 	private:
 		static LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)

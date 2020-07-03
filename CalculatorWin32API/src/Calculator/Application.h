@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include "Core.h"
 #include "Window/MainWindow.h"
 
 #define ADD_WIDGET(widget) m_Win.
@@ -12,7 +13,7 @@
 namespace Calculator
 {
 
-	class Application
+	class CL_API Application
 	{
 	protected:
 		Application() {}

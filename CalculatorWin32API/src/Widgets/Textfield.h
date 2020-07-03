@@ -1,12 +1,13 @@
 #pragma once
 
+#include "Calculator/Core.h"
 #include "Widget.h"
 
 
 namespace Calculator
 {
 
-	class Textfield : public Widget
+	class CL_API Textfield : public Widget
 	{
 	public:
 		
