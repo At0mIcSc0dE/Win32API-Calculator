@@ -26,8 +26,8 @@ namespace Calculator
 		* @param rect is the button's transform
 		* @param parent is the parent, often the main window
 		*/
-		void Init(
-			_In_ const LPCWSTR& name, 
+		[[noreturn]] void Init(
+			_In_ const LPCWSTR& text, 
 			_In_ const Rect& rect, 
 			_In_ HWND& parent, 
 			_In_opt_ const int& flags = WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON
@@ -43,8 +43,8 @@ namespace Calculator
 		* @param height is the button's height
 		* @param parent is the parent, often the main window
 		*/
-		void Init(
-			_In_ const LPCWSTR& name,
+		[[noreturn]] void Init(
+			_In_ const LPCWSTR& text,
 			_In_ const int& x,
 			_In_ const int& y,
 			_In_ const int& width,
@@ -59,7 +59,7 @@ namespace Calculator
 		* @param width is the target button width
 		* @param height is the target button height
 		*/
-		virtual void Resize(
+		[[noreturn]] virtual void Resize(
 			_In_ const int& width, 
 			_In_ const int& height
 		) override;
@@ -67,19 +67,19 @@ namespace Calculator
 		/**
 		* Hides the button after it was shown, does nothing if button is already hidden
 		*/
-		virtual void Hide() const override;
+		[[noreturn]] virtual void Hide() const override;
 
 		/**
 		* Shows the button after it was hidden, does nothing if button is already displayed
 		*/
-		virtual void Show() const override;
+		[[noreturn]] virtual void Show() const override;
 
 		/**
 		* Sets text which is displayed when the button is rendered
 		*
 		* @param text is the new button text
 		*/
-		void SetText(
+		[[noreturn]] void SetText(
 			_In_ const LPCWSTR& text
 		);
 

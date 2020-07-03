@@ -7,8 +7,6 @@
 #include "Core.h"
 #include "Window/MainWindow.h"
 
-#define ADD_WIDGET(widget) m_Win.
-
 
 namespace Calculator
 {
@@ -16,7 +14,8 @@ namespace Calculator
 	class CL_API Application
 	{
 	protected:
-		Application() {}
+		Application()
+			: m_Win() {}
 	public:
 		/**
 		* Function has to be called after getting an Application& using the Getter
@@ -31,7 +30,7 @@ namespace Calculator
 		/**
 		* Starts application loop
 		*/
-		void Run();
+		[[noreturn]] void Run();
 
 		/**
 		* Static function to get static Application instance
@@ -59,7 +58,7 @@ namespace Calculator
 		const MainWindow& GetMainWindow() const { return m_Win; }
 
 		~Application();
-
+		
 	private:
 		static Application* m_Application;
 		MainWindow m_Win;
@@ -71,8 +70,8 @@ namespace Calculator
 	{
 		std::unique_ptr<WIDGET> widget = std::make_unique<WIDGET>();
 		widget->Init(args...);
-		//m_Win.GetWidgets().insert({ name, std::move(widget) });
 		m_Win.GetWidgets().emplace_back(std::move(widget));
+		auto& vec = m_Win.GetWidgets();
 
 		return true;
 	}

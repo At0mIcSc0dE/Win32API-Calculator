@@ -39,25 +39,39 @@ namespace Calculator
 		*/
 		virtual PCWSTR ClassName() const override { return L"MAINWINDOW"; }
 
-		MainWindow()
-			:m_Widgets{} {}
-
+		/**
+		* MainWindow destructor
+		*/
 		~MainWindow();
 
 		/**
-		* Getter for the std::unordered_map which stores all widgets
+		* Getter for the std::vector which stores all widgets
 		*
-		* @returns std::unordered_map of all widgets
+		* @returns std::vector of all widgets
 		*/
-		//std::unordered_map<const wchar_t*, std::unique_ptr<Widget>>& GetWidgets() { return m_Widgets; }
 		std::vector<std::unique_ptr<Widget>>& GetWidgets() { return m_Widgets; }
 
+		/**
+		* Deleted copy constructors to allow std::unique_ptr in dll-linkage
+		*/
 		MainWindow(const MainWindow&) = delete;
+
+		/**
+		* Deleted copy constructors to allow std::unique_ptr in dll-linkage
+		*/
 		MainWindow& operator=(const MainWindow&) = delete;
 
 	private:
-		//std::unordered_map<const wchar_t*, std::unique_ptr<Widget>> m_Widgets;
 		std::vector<std::unique_ptr<Widget>> m_Widgets;
+	
+	protected:
+		/**
+		* Mainwindow constructor, used to initialize m_Widgets
+		*
+		* @returns MainWindow instance
+		*/
+		MainWindow()
+			:m_Widgets{} {}
 	};
 
 }

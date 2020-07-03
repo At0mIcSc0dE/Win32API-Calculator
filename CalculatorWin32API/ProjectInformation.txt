@@ -1,7 +1,7 @@
 This project was my first C++ project with the Win32API
 
 I tested many new things which where unknown to me before, examples inculude:
-	SAL language (not sure if I used it correctly)
+	SAL language (not sure if I used it correctly), [[noreturn]]
 	Hexadecimal instead of decimal (not sure if it makes the code faster or more readable. Some say that an integer can store greater values in hex but I expected the compiler to automatically convert it to hex)
 	A text file including a summary of what I've learned (this file)
 	"Propper" documentation (not sure if everything is written correctly, e.g. IntelliSense displays the * in the docstring if I didn't provide it with any @param/@returns...)
