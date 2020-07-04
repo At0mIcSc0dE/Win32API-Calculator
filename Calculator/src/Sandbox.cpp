@@ -23,10 +23,22 @@ void Sandbox::AddWidgets()
 {
 	m_Application.AddWidget<Calculator::Button>(L"1", 10, 40, 90, 30, m_Application.GetMainWindow().GetHWND());
 	m_Application.AddWidget<Calculator::Button>(L"2", 10, 10, 90, 30, m_Application.GetMainWindow().GetHWND());
-	m_Application.AddWidget<Calculator::Textfield>(L"txt1", 10, 90, 90, 30, m_Application.GetMainWindow().GetHWND());
+	//m_Application.AddWidget<Calculator::Textfield>(L"txt1", 10, 90, 90, 30, m_Application.GetMainWindow().GetHWND());
 }
 
 void Sandbox::OnEvent(Calculator::Event& e)
 {
 	//Dispatch Events here
+
+	auto& widgets = m_Application.GetWidgets();
+
+	if (widgets.size() > 1)
+	{
+		//auto w = widgets.at(2)->CastToWidget<Calculator::Textfield>();
+		//w.SetText(L"HELLO");
+
+		//Calculator::Button& btn = (Calculator::Button&)*widgets[0];
+		const Calculator::Button& btn = m_Application.CastToWidget<Calculator::Button>(0);
+		btn.Hide();
+	}
 }

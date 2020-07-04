@@ -34,26 +34,11 @@ namespace Calculator
 
 	void Application::OnEvent(Event& e)
 	{
-		//switch (LOWORD(e))
-		//{
-		//case 0x0:
-		//	MessageBox(NULL, L"Button 1 pressed", L"1", NULL);
-		//	break;
-		//case 0x1:
-		//	MessageBox(NULL, L"Button 2 pressed", L"2", NULL);
-		//	break;
-		//case 0x2:
-		//	MessageBox(NULL, L"Txt 1 pressed", L"3", NULL);
-		//	break;
-		//default:
-		//	break;
-		//}
 		m_AppData.eventCallback(e);
 	}
 
 	Application::~Application()
 	{
-		delete m_Application;
 	}
 
 }

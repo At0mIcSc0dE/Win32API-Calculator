@@ -79,6 +79,21 @@ namespace Calculator
 		Application(const Application& app) = delete;
 		Application operator=(const Application& app) = delete;
 		
+		/**
+		* Getter for m_Win widgets
+		*
+		* @returns a vector of all the widgets in the window
+		*/
+		const std::vector<Widget*>& GetWidgets() const { return m_Win.GetWidgets(); }
+
+		template<typename WIDGET>
+		const WIDGET& CastToWidget(const int& index)
+		{
+			//WIDGET& w = (WIDGET&)*m_Win.GetWidgets()[index];
+			//return w;
+			return (WIDGET&)*m_Win.GetWidgets()[index];
+		}
+
 	private:
 		static Application* m_Application;
 		MainWindow m_Win;
@@ -94,9 +109,9 @@ namespace Calculator
 	template<typename WIDGET, typename ...Args>
 	inline bool Application::AddWidget(Args ...args)
 	{
-		std::unique_ptr<WIDGET> widget = std::make_unique<WIDGET>();
+		WIDGET* widget = new WIDGET;
 		widget->Init(args...);
-		m_Win.GetWidgets().emplace_back(std::move(widget));
+		m_Win.GetModifiableWidgets().emplace_back(std::move(widget));
 		auto& vec = m_Win.GetWidgets();
 
 		return true;

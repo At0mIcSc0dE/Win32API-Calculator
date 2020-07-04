@@ -109,11 +109,18 @@ namespace Calculator
 		*
 		* @returns the current button's buttonID
 		*/
-		virtual const int& GetID() const override { return m_ButtonID; }
+		virtual const int& GetID() const override { return m_WidgetID; }
+
+		/**
+		* Getter for button HWND
+		*
+		* @returns the current button's hwnd
+		*/
+		virtual const HWND& GetHWND() const override { return m_hwnd; }
 
 	private:
-		HWND m_hwndButton;
-		int m_ButtonID;
+		HWND m_hwnd;
+		int m_WidgetID;
 	};
 
 }

@@ -77,12 +77,19 @@ namespace Calculator
 		/**
 		* Getter for the std::vector which stores all widgets
 		*
+		* @returns const std::vector of all widgets
+		*/
+		const std::vector<Widget*>& GetWidgets() const { return m_Widgets; }
+
+		/**
+		* Getter for the std::vector which stores all widgets
+		*
 		* @returns std::vector of all widgets
 		*/
-		std::vector<std::unique_ptr<Widget>>& GetWidgets() { return m_Widgets; }
+		std::vector<Widget*>& GetModifiableWidgets() { return m_Widgets; }
 
 	private:
-		std::vector<std::unique_ptr<Widget>> m_Widgets;
+		std::vector<Widget*> m_Widgets;
 
 		struct WindowData
 		{

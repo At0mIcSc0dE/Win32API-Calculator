@@ -68,6 +68,14 @@ namespace Calculator
 		*@returns the current widget's ID
 		*/
 		virtual const int& GetID() const = 0;
+
+		/**
+		* Getter for widget HWND
+		*
+		* @returns the widget's HWND
+		*/
+		virtual const HWND& GetHWND() const = 0;
+
 	protected:
 		static int s_NextID;
 	};
