@@ -67,9 +67,19 @@ namespace Calculator
 		const MainWindow& GetMainWindow() const { return m_Win; }
 
 		/**
+		* Casts a object of type Widget to template argument
+		*
+		* @param index is the widget's index in the vector
+		* @returns a reference of type WIDGET
+		* @throws std::bad_cast if widgets[index] can't be casted to WIDGET
+		*/
+		template<typename WIDGET>
+		const WIDGET& CastToWidget(const int& index);
+
+		/**
 		* Destructor for application
 		*/
-		~Application();
+		virtual ~Application();
 
 		/**
 		* Sets the event callback function which is called when an event is received
@@ -85,14 +95,6 @@ namespace Calculator
 		* @returns a vector of all the widgets in the window
 		*/
 		const std::vector<Widget*>& GetWidgets() const { return m_Win.GetWidgets(); }
-
-		template<typename WIDGET>
-		const WIDGET& CastToWidget(const int& index)
-		{
-			//WIDGET& w = (WIDGET&)*m_Win.GetWidgets()[index];
-			//return w;
-			return (WIDGET&)*m_Win.GetWidgets()[index];
-		}
 
 	private:
 		static Application* m_Application;
@@ -115,6 +117,15 @@ namespace Calculator
 		auto& vec = m_Win.GetWidgets();
 
 		return true;
+	}
+
+	template<typename WIDGET>
+	inline const WIDGET& Application::CastToWidget(const int& index)
+	{
+		if (WIDGET::GetStaticWidgetType() == m_Win.GetWidgets()[index]->GetWidgetType())
+			return (WIDGET&)*m_Win.GetWidgets()[index];
+		else
+			throw std::bad_cast();
 	}
 
 }

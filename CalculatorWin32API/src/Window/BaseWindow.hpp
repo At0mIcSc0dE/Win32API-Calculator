@@ -68,6 +68,8 @@ namespace Calculator
 
 		HWND GetHWND() const { return m_hwnd; }
 
+		virtual ~BaseWindow() {}
+
 	protected:
 		HWND m_hwnd;
 		WNDCLASS wc;

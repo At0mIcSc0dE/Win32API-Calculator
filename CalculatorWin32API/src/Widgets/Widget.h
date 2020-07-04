@@ -76,6 +76,11 @@ namespace Calculator
 		*/
 		virtual const HWND& GetHWND() const = 0;
 
+		/**
+		* Destructor for widget
+		*/
+		virtual ~Widget() {}
+
 	protected:
 		static int s_NextID;
 	};
