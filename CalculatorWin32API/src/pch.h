@@ -16,3 +16,4 @@
 #include <sstream>
 #include <thread>
 #include <memory>
+#include <functional>

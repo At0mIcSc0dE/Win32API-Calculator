@@ -34,6 +34,11 @@ public:
 	[[noreturn]] void AddWidgets();
 
 	/**
+	* Receives all events from Calculator::Application, should dispatch them to seperate functions
+	*/
+	[[noreturn]] virtual void OnEvent(Calculator::Event& e) override;
+
+	/**
 	* Getter for the application
 	*
 	* @returns currently running application

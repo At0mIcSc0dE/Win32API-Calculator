@@ -66,7 +66,7 @@ namespace Calculator
 			//}
 			#pragma endregion
 
-
+			m_WinData.eventCallback(wParam);
 
 		}
 		return 0;

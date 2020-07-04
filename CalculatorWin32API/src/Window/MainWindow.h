@@ -10,8 +10,13 @@
 #include "Calculator/Core.h"
 
 
+#define SET_EVENT_FN(func) [this](Calculator::Event& e) { func(e); }
+
 namespace Calculator
 {
+	typedef WPARAM Event;
+	using EventFn = std::function<bool(Event&)>;
+	using EventCallbackFn = std::function<void(Event&)>;
 
 	class CL_API MainWindow : public BaseWindow<MainWindow>
 	{
@@ -54,13 +59,6 @@ namespace Calculator
 		~MainWindow();
 
 		/**
-		* Getter for the std::vector which stores all widgets
-		*
-		* @returns std::vector of all widgets
-		*/
-		std::vector<std::unique_ptr<Widget>>& GetWidgets() { return m_Widgets; }
-
-		/**
 		* Deleted copy constructors to allow std::unique_ptr in dll-linkage
 		*/
 		MainWindow(const MainWindow&) = delete;
@@ -70,8 +68,27 @@ namespace Calculator
 		*/
 		MainWindow& operator=(const MainWindow&) = delete;
 
+		/**
+		* Sets the event callback function which is called when an event is received
+		* Dispatches all Events to Application
+		*/
+		void SetEventCallback(const EventCallbackFn& eCFn) { m_WinData.eventCallback = eCFn; }
+
+		/**
+		* Getter for the std::vector which stores all widgets
+		*
+		* @returns std::vector of all widgets
+		*/
+		std::vector<std::unique_ptr<Widget>>& GetWidgets() { return m_Widgets; }
+
 	private:
 		std::vector<std::unique_ptr<Widget>> m_Widgets;
+
+		struct WindowData
+		{
+			EventCallbackFn eventCallback;
+		};
+		WindowData m_WinData;
 	};
 
 }

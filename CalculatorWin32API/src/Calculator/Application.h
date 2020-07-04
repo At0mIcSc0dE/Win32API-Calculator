@@ -15,7 +15,9 @@ namespace Calculator
 	{
 	protected:
 		Application() : m_Win() {}
+	
 	public:
+		
 		/**
 		* Function has to be called after getting an Application& using the Getter
 		*
@@ -50,6 +52,14 @@ namespace Calculator
 		bool AddWidget(Args... args);
 
 		/**
+		* Receives all Events,  
+		* calls m_AppData.eventCallback defined by the client in function SetEventCallback
+		*
+		* @see Calculator::Application::SetEventCallback(const EventCallbackFn& eCFn)
+		*/
+		virtual void OnEvent(Event& e);
+
+		/**
 		* Getter for MainWindow
 		*
 		* @returns the main window
@@ -60,10 +70,24 @@ namespace Calculator
 		* Destructor for application
 		*/
 		~Application();
+
+		/**
+		* Sets the event callback function which is called when an event is received
+		*/
+		[[noreturn]] void SetEventCallback(const EventCallbackFn& eCFn) { m_AppData.eventCallback = eCFn; }
+
+		Application(const Application& app) = delete;
+		Application operator=(const Application& app) = delete;
 		
 	private:
 		static Application* m_Application;
 		MainWindow m_Win;
+
+		struct ApplicationData
+		{
+			EventCallbackFn eventCallback;
+		};
+		ApplicationData m_AppData;
 	};
 
 	
