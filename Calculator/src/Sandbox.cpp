@@ -21,8 +21,8 @@ void Sandbox::Run()
 
 void Sandbox::AddWidgets()
 {
-	m_Application.AddWidget<Calculator::Button>(L"1", 10, 40, 90, 30, m_Application.GetMainWindow().GetHWND());
-	m_Application.AddWidget<Calculator::Button>(L"2", 10, 10, 90, 30, m_Application.GetMainWindow().GetHWND());
+	m_Application.AddWidget<Calculator::Button>(L"1", 10, 0, 90, 30, m_Application.GetMainWindow().GetHWND());
+	m_Application.AddWidget<Calculator::Button>(L"2", 10, 30, 90, 30, m_Application.GetMainWindow().GetHWND());
 	//m_Application.AddWidget<Calculator::Textfield>(L"txt1", 10, 90, 90, 30, m_Application.GetMainWindow().GetHWND());
 }
 
