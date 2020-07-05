@@ -14,7 +14,7 @@ namespace Calculator
 		m_WidgetID = s_NextID;
 		++s_NextID;
 
-		m_hwnd = CreateWindow(L"BUTTON", text, flags, rect.x, rect.y, rect.width, rect.height,
+		m_hWnd = CreateWindow(L"BUTTON", text, flags, rect.x, rect.y, rect.width, rect.height,
 			parent, (HMENU)m_WidgetID, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL);
 	}
 
@@ -23,7 +23,7 @@ namespace Calculator
 		m_WidgetID = s_NextID;
 		++s_NextID;
 
-		m_hwnd = CreateWindow(L"BUTTON", text, flags, x, y, width, height,
+		m_hWnd = CreateWindow(L"BUTTON", text, flags, x, y, width, height,
 			parent, (HMENU)m_WidgetID, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL);
 	}
 
@@ -34,16 +34,16 @@ namespace Calculator
 
 	void Button::Hide() const
 	{
-		ShowWindow(m_hwnd, SW_HIDE);
+		ShowWindow(m_hWnd, SW_HIDE);
 	}
 
 	void Button::Show() const
 	{
-		ShowWindow(m_hwnd, SW_SHOW);
+		ShowWindow(m_hWnd, SW_SHOW);
 	}
 
 	void Button::SetText(const LPCWSTR& text)
 	{
-		SetDlgItemText(m_hwnd, m_WidgetID, text);
+		SetDlgItemText(m_hWnd, m_WidgetID, text);
 	}
 }

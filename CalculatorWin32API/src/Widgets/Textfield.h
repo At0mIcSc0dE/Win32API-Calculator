@@ -114,10 +114,10 @@ namespace Calculator
 		*
 		* @returns the current textfield's HWND
 		*/
-		virtual const HWND& GetHWND() const override { return m_hwnd; }
+		virtual const HWND& GetHWND() const override { return m_hWnd; }
 
 	private:
-		HWND m_hwnd;
+		HWND m_hWnd;
 		int m_WidgetID;
 	};
 

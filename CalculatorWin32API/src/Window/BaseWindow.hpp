@@ -25,7 +25,7 @@ namespace Calculator
 				pThis = (DERIVED_TYPE*)pCreate->lpCreateParams;
 				SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)pThis);
 
-				pThis->m_hwnd = hwnd;
+				pThis->m_hWnd = hwnd;
 			}
 			else
 			{
@@ -43,7 +43,7 @@ namespace Calculator
 
 	public:
 		BaseWindow()
-			:m_hwnd(NULL), wc{} {}
+			:m_hWnd(NULL), wc{} {}
 
 		BOOL CreateMainWindow(
 			PCWSTR lpWindowName,
@@ -61,17 +61,17 @@ namespace Calculator
 			wc.lpszClassName = ClassName();
 
 			RegisterClass(&wc);
-			m_hwnd = CreateWindowEx(dwExStyle, ClassName(), lpWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu, GetModuleHandle(NULL), this);
+			m_hWnd = CreateWindowEx(dwExStyle, ClassName(), lpWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu, GetModuleHandle(NULL), this);
 
-			return (m_hwnd ? TRUE : FALSE);
+			return (m_hWnd ? TRUE : FALSE);
 		}
 
-		HWND GetHWND() const { return m_hwnd; }
+		HWND GetHWND() const { return m_hWnd; }
 
 		virtual ~BaseWindow() {}
 
 	protected:
-		HWND m_hwnd;
+		HWND m_hWnd;
 		WNDCLASS wc;
 
 		virtual PCWSTR ClassName() const = 0;

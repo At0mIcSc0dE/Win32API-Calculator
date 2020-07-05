@@ -28,7 +28,7 @@ namespace Calculator
 			return 0;
 		case WM_CLOSE:
 		{
-			DestroyWindow(m_hwnd);
+			DestroyWindow(m_hWnd);
 		}
 		case WM_LBUTTONDOWN:
 		{
@@ -73,13 +73,13 @@ namespace Calculator
 		case WM_PAINT:
 		{
 			PAINTSTRUCT ps;
-			HDC hdc = BeginPaint(m_hwnd, &ps);
+			HDC hdc = BeginPaint(m_hWnd, &ps);
 			FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
-			EndPaint(m_hwnd, &ps);
+			EndPaint(m_hWnd, &ps);
 		}
 		return 0;
 		default:
-			return DefWindowProc(m_hwnd, uMsg, wParam, lParam);
+			return DefWindowProc(m_hWnd, uMsg, wParam, lParam);
 		}
 		return TRUE;
 	}

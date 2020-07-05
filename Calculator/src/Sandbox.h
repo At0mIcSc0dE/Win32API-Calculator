@@ -45,6 +45,8 @@ public:
 	*/
 	Calculator::Application& GetApplication() const { return m_Application; }
 
+	bool TestFn(Calculator::Event& e);
+
 private:
 	Calculator::Application& m_Application;
 };

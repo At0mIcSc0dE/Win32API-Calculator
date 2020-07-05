@@ -8,15 +8,13 @@
 #include "Widgets/Button.h"
 #include "Widgets/Textfield.h"
 #include "Calculator/Core.h"
+#include "Calculator/Calculator.h"
 
 
-#define SET_EVENT_FN(func) [this](Calculator::Event& e) { func(e); }
+#define BIND_EVENT_FN(func) [this](Calculator::Event& e) { func(e); }
 
 namespace Calculator
 {
-	typedef WPARAM Event;
-	using EventFn = std::function<bool(Event&)>;
-	using EventCallbackFn = std::function<void(Event&)>;
 
 	class CL_API MainWindow : public BaseWindow<MainWindow>
 	{
