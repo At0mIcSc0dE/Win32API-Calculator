@@ -17,11 +17,11 @@ namespace Calculator
 		Application() : m_Win() {}
 	
 	public:
-		
 		/**
 		* Function has to be called after getting an Application& using the Getter
 		*
 		* @param nCmdShow is the nCmdShow of the main function
+		* @returns true if the initialisation was successful, else false
 		* @see const MainWindow& GetMainWindow() const function
 		*/
 		bool Init(
@@ -57,7 +57,9 @@ namespace Calculator
 		*
 		* @see Calculator::Application::SetEventCallback(const EventCallbackFn& eCFn)
 		*/
-		virtual void OnEvent(Event& e);
+		[[noreturn]] virtual void OnEvent(
+			_In_ Event& e
+		);
 
 		/**
 		* Getter for MainWindow
@@ -67,14 +69,16 @@ namespace Calculator
 		const MainWindow& GetMainWindow() const { return m_Win; }
 
 		/**
-		* Casts a object of type Widget to template argument
+		* Casts an object of type Widget to template argument
 		*
 		* @param index is the widget's index in the vector
 		* @returns a reference of type WIDGET
 		* @throws std::bad_cast if widgets[index] can't be casted to WIDGET
 		*/
 		template<typename WIDGET>
-		WIDGET& CastToWidget(int index);
+		WIDGET& CastToWidget(
+			_In_ int index
+		);
 
 		/**
 		* Destructor for application
@@ -84,9 +88,16 @@ namespace Calculator
 		/**
 		* Sets the event callback function which is called when an event is received
 		*/
-		[[noreturn]] void SetEventCallback(const EventCallbackFn& eCFn) { m_AppData.eventCallback = eCFn; }
+		[[noreturn]] void SetEventCallback(_In_ const EventCallbackFn& eCFn) { m_AppData.eventCallback = eCFn; }
 
+		/**
+		* Deleted copy constructor
+		*/
 		Application(const Application& app) = delete;
+
+		/**
+		* Deleted copy constructor
+		*/
 		Application operator=(const Application& app) = delete;
 		
 		/**
