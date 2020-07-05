@@ -20,7 +20,7 @@ public:
 	* @warning does not currently return anything other than true
 	*/
 	bool Init(
-		_In_ const int& nCmdShow
+		_In_ int nCmdShow
 	);
 	
 	/**

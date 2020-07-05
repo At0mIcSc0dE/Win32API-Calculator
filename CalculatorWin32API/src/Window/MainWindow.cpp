@@ -52,20 +52,20 @@ namespace Calculator
 		{
 			//find border thickness
 			SetRectEmpty(&border_thickness);
-			if (GetWindowLongPtr(m_hwnd, GWL_STYLE) & WS_THICKFRAME)
+			if (GetWindowLongPtr(m_hWnd, GWL_STYLE) & WS_THICKFRAME)
 			{
-				AdjustWindowRectEx(&border_thickness, GetWindowLongPtr(m_hwnd, GWL_STYLE) & ~WS_CAPTION, FALSE, NULL);
+				AdjustWindowRectEx(&border_thickness, GetWindowLongPtr(m_hWnd, GWL_STYLE) & ~WS_CAPTION, FALSE, NULL);
 				border_thickness.left *= -1;
 				border_thickness.top *= -1;
 			}
-			else if (GetWindowLongPtr(m_hwnd, GWL_STYLE) & WS_BORDER)
+			else if (GetWindowLongPtr(m_hWnd, GWL_STYLE) & WS_BORDER)
 			{
 				SetRect(&border_thickness, 1, 1, 1, 1);
 			}
 
 			MARGINS margins = { 0 };
-			DwmExtendFrameIntoClientArea(m_hwnd, &margins);
-			SetWindowPos(m_hwnd, NULL, 0, 0, 0, 0, SWP_SHOWWINDOW | SWP_NOMOVE | SWP_NOSIZE | SWP_FRAMECHANGED);
+			DwmExtendFrameIntoClientArea(m_hWnd, &margins);
+			SetWindowPos(m_hWnd, NULL, 0, 0, 0, 0, SWP_SHOWWINDOW | SWP_NOMOVE | SWP_NOSIZE | SWP_FRAMECHANGED);
 			break;
 
 		}
@@ -78,7 +78,7 @@ namespace Calculator
 			margins.cyBottomHeight = 20;	// 20
 			margins.cyTopHeight = 0;		// 27
 
-			HRESULT hr = DwmExtendFrameIntoClientArea(m_hwnd, &margins);
+			HRESULT hr = DwmExtendFrameIntoClientArea(m_hWnd, &margins);
 			if (!SUCCEEDED(hr))
 			{
 				MessageBox(NULL, L"Failed to extend", L"", NULL);
@@ -91,7 +91,7 @@ namespace Calculator
 			return 0;
 		case WM_CLOSE:
 		{
-			DestroyWindow(m_hwnd);
+			DestroyWindow(m_hWnd);
 		}
 		return 0;
 		case WM_COMMAND:
@@ -102,7 +102,7 @@ namespace Calculator
 		case WM_PAINT:
 		{
 			PAINTSTRUCT ps;
-			HDC hdc = BeginPaint(m_hwnd, &ps);
+			HDC hdc = BeginPaint(m_hWnd, &ps);
 
 			RECT rc = ps.rcPaint;
 			BP_PAINTPARAMS params = { sizeof(params), BPPF_NOCLIP | BPPF_ERASE };
@@ -114,7 +114,7 @@ namespace Calculator
 			BufferedPaintSetAlpha(hbuffer, &rc, 255);
 			EndBufferedPaint(hbuffer, TRUE);
 
-			EndPaint(m_hwnd, &ps);
+			EndPaint(m_hWnd, &ps);
 			return 0;
 		}
 		case WM_NCCALCSIZE:
@@ -131,17 +131,17 @@ namespace Calculator
 		case WM_NCHITTEST:
 		{
 			//do default processing, but allow resizing from top-border
-			LRESULT result = DefWindowProc(m_hwnd, uMsg, wParam, lParam);
+			LRESULT result = DefWindowProc(m_hWnd, uMsg, wParam, lParam);
 			if (result == HTCLIENT)
 			{
 				POINT pt = { GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam) };
-				ScreenToClient(m_hwnd, &pt);
+				ScreenToClient(m_hWnd, &pt);
 				if (pt.y < border_thickness.top) return HTTOP;
 			}
 			return result;
 		}
 		default:
-			return DefWindowProc(m_hwnd, uMsg, wParam, lParam);
+			return DefWindowProc(m_hWnd, uMsg, wParam, lParam);
 		}
 		return TRUE;
 	}

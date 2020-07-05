@@ -15,7 +15,7 @@ namespace Calculator
 	class CL_API BaseWindow
 	{
 	private:
-		static LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+		static LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		{
 			DERIVED_TYPE* pThis = NULL;
 
@@ -23,13 +23,13 @@ namespace Calculator
 			{
 				CREATESTRUCT* pCreate = (CREATESTRUCT*)lParam;
 				pThis = (DERIVED_TYPE*)pCreate->lpCreateParams;
-				SetWindowLongPtr(hwnd, GWLP_USERDATA, (LONG_PTR)pThis);
+				SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)pThis);
 
-				pThis->m_hwnd = hwnd;
+				pThis->m_hWnd = hWnd;
 			}
 			else
 			{
-				pThis = (DERIVED_TYPE*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
+				pThis = (DERIVED_TYPE*)GetWindowLongPtr(hWnd, GWLP_USERDATA);
 			}
 			if (pThis)
 			{
@@ -37,13 +37,13 @@ namespace Calculator
 			}
 			else
 			{
-				return DefWindowProc(hwnd, uMsg, wParam, lParam);
+				return DefWindowProc(hWnd, uMsg, wParam, lParam);
 			}
 		}
 
 	public:
 		BaseWindow()
-			:m_hwnd(NULL), wc{} {}
+			:m_hWnd(NULL), wc{} {}
 
 		BOOL CreateMainWindow(
 			PCWSTR lpWindowName,
@@ -61,17 +61,17 @@ namespace Calculator
 			wc.lpszClassName = ClassName();
 
 			RegisterClass(&wc);
-			m_hwnd = CreateWindowEx(dwExStyle, ClassName(), lpWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu, GetModuleHandle(NULL), this);
+			m_hWnd = CreateWindowEx(dwExStyle, ClassName(), lpWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu, GetModuleHandle(NULL), this);
 
-			return (m_hwnd ? TRUE : FALSE);
+			return (m_hWnd ? TRUE : FALSE);
 		}
 
-		HWND GetHWND() const { return m_hwnd; }
+		HWND GetHWND() const { return m_hWnd; }
 
 		virtual ~BaseWindow() {}
 
 	protected:
-		HWND m_hwnd;
+		HWND m_hWnd;
 		WNDCLASS wc;
 
 		virtual PCWSTR ClassName() const = 0;

@@ -27,7 +27,7 @@ namespace Calculator
 			_In_ const LPCWSTR& name,
 			_In_ const Rect& rect,
 			_In_ HWND& parent,
-			_In_opt_ const int& flags = WS_CHILD | WS_VISIBLE | WS_BORDER
+			_In_opt_ int flags = WS_CHILD | WS_VISIBLE | WS_BORDER
 		);
 		
 		/**
@@ -42,12 +42,12 @@ namespace Calculator
 		*/
 		[[noreturn]] void Init(
 			_In_ const LPCWSTR& name, 
-			_In_ const int& x, 
-			_In_ const int& y, 
-			_In_ const int& width,
-			_In_ const int& height, 
+			_In_ int x, 
+			_In_ int y, 
+			_In_ int width,
+			_In_ int height, 
 			_In_ HWND& parent, 
-			_In_opt_ const int& flags = WS_CHILD | WS_VISIBLE | WS_BORDER
+			_In_opt_ int flags = WS_CHILD | WS_VISIBLE | WS_BORDER
 		);
 
 		/**
@@ -57,8 +57,8 @@ namespace Calculator
 		* @param height is the target button height
 		*/
 		[[noreturn]] virtual void Resize(
-			_In_ const int& width,
-			_In_ const int& height
+			_In_ int width,
+			_In_ int height
 		) override;
 
 		/**
@@ -107,17 +107,17 @@ namespace Calculator
 		*
 		* @returns the current textfield's textfieldID
 		*/
-		virtual const int& GetID() const override { return m_WidgetID; }
+		virtual int GetID() const override { return m_WidgetID; }
 
 		/**
-		* Getter for textfield's HWND
+		* Getter for textfield's hWnd
 		*
-		* @returns the current textfield's HWND
+		* @returns the current textfield's hWnd
 		*/
-		virtual const HWND& GetHWND() const override { return m_hwnd; }
+		virtual const HWND& GetHWND() const override { return m_hWnd; }
 
 	private:
-		HWND m_hwnd;
+		HWND m_hWnd;
 		int m_WidgetID;
 	};
 

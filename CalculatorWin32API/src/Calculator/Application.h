@@ -25,7 +25,7 @@ namespace Calculator
 		* @see const MainWindow& GetMainWindow() const function
 		*/
 		bool Init(
-			_In_ const int& nCmdShow
+			_In_ int nCmdShow
 		);
 
 		/**
@@ -74,7 +74,7 @@ namespace Calculator
 		* @throws std::bad_cast if widgets[index] can't be casted to WIDGET
 		*/
 		template<typename WIDGET>
-		const WIDGET& CastToWidget(const int& index);
+		WIDGET& CastToWidget(int index);
 
 		/**
 		* Destructor for application
@@ -94,7 +94,7 @@ namespace Calculator
 		*
 		* @returns a vector of all the widgets in the window
 		*/
-		const std::vector<Widget*>& GetWidgets() const { return m_Win.GetWidgets(); }
+		const std::vector<std::unique_ptr<Widget>>& GetWidgets() const { return m_Win.GetWidgets(); }
 
 	private:
 		static Application* m_Application;
@@ -111,7 +111,8 @@ namespace Calculator
 	template<typename WIDGET, typename ...Args>
 	inline bool Application::AddWidget(Args ...args)
 	{
-		WIDGET* widget = new WIDGET;
+		//WIDGET* widget = new WIDGET;
+		std::unique_ptr<WIDGET> widget = std::make_unique<WIDGET>();
 		widget->Init(args...);
 		m_Win.GetModifiableWidgets().emplace_back(std::move(widget));
 		auto& vec = m_Win.GetWidgets();
@@ -120,7 +121,7 @@ namespace Calculator
 	}
 
 	template<typename WIDGET>
-	inline const WIDGET& Application::CastToWidget(const int& index)
+	inline WIDGET& Application::CastToWidget(int index)
 	{
 		if (WIDGET::GetStaticWidgetType() == m_Win.GetWidgets()[index]->GetWidgetType())
 			return (WIDGET&)*m_Win.GetWidgets()[index];

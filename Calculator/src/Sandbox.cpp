@@ -6,7 +6,7 @@ Sandbox::Sandbox()
 {
 }
 
-bool Sandbox::Init(const int& nCmdShow)
+bool Sandbox::Init(int nCmdShow)
 {
 	m_Application.Init(nCmdShow);
 	m_Application.SetEventCallback(SET_EVENT_FN(OnEvent));
@@ -38,7 +38,7 @@ void Sandbox::OnEvent(Calculator::Event& e)
 		//w.SetText(L"HELLO");
 
 		//Calculator::Button& btn = (Calculator::Button&)*widgets[0];
-		const Calculator::Button& btn = m_Application.CastToWidget<Calculator::Button>(0);
+		Calculator::Button& btn = m_Application.CastToWidget<Calculator::Button>(0);
 		btn.Hide();
 	}
 }
