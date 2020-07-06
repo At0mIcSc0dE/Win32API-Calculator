@@ -74,7 +74,7 @@ namespace Calculator
 		* @throws std::bad_cast if widgets[index] can't be casted to WIDGET
 		*/
 		template<typename WIDGET>
-		const WIDGET& CastToWidget(const int& index);
+		const WIDGET& CastToWidget(const std::string& name);
 
 		/**
 		* Destructor for application
@@ -94,7 +94,7 @@ namespace Calculator
 		*
 		* @returns a vector of all the widgets in the window
 		*/
-		const std::vector<Widget*>& GetWidgets() const { return m_Win.GetWidgets(); }
+		std::map<const std::string_view, Widget*>& GetWidgets() { return m_Win.GetWidgets(); }
 
 	private:
 		static Application* m_Application;
@@ -113,19 +113,25 @@ namespace Calculator
 	{
 		WIDGET* widget = new WIDGET;
 		widget->Init(args...);
-		m_Win.GetModifiableWidgets().emplace_back(std::move(widget));
+		//m_Win.GetModifiableWidgets().emplace_back(std::move(widget));
+		m_Win.GetWidgets().insert({ "h", std::move(widget) });
 		auto& vec = m_Win.GetWidgets();
 
 		return true;
 	}
 
 	template<typename WIDGET>
-	inline const WIDGET& Application::CastToWidget(const int& index)
+	inline const WIDGET& Application::CastToWidget(const std::string& name)
 	{
-		if (WIDGET::GetStaticWidgetType() == m_Win.GetWidgets()[index]->GetWidgetType())
-			return (WIDGET&)*m_Win.GetWidgets()[index];
+		//if (WIDGET::GetStaticWidgetType() == m_Win.GetWidgets()[index]->GetWidgetType())
+		//	return (WIDGET&)*m_Win.GetWidgets()[index];
+		//else
+		//	throw std::bad_cast();
+		if (WIDGET::GetStaticWidgetType() == m_Win.GetWidgets()["name"]->GetWidgetType())
+			return (WIDGET&)*m_Win.GetWidgets()["h"];
 		else
 			throw std::bad_cast();
+
 	}
 
 }

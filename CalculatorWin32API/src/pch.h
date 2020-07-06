@@ -17,3 +17,5 @@
 #include <thread>
 #include <memory>
 #include <functional>
+#include <string_view>
+#include <map>

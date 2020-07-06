@@ -59,12 +59,12 @@ namespace Calculator
 		/**
 		* Deleted copy constructors to allow std::unique_ptr in dll-linkage
 		*/
-		MainWindow(const MainWindow&) = delete;
+		//MainWindow(const MainWindow&) = delete;
 
 		/**
 		* Deleted copy constructors to allow std::unique_ptr in dll-linkage
 		*/
-		MainWindow& operator=(const MainWindow&) = delete;
+		//MainWindow& operator=(const MainWindow&) = delete;
 
 		/**
 		* Sets the event callback function which is called when an event is received
@@ -77,17 +77,17 @@ namespace Calculator
 		*
 		* @returns const std::vector of all widgets
 		*/
-		const std::vector<Widget*>& GetWidgets() const { return m_Widgets; }
+		std::map<const std::string_view, Widget*>& GetWidgets() { return m_Widgets; }
 
 		/**
 		* Getter for the std::vector which stores all widgets
 		*
 		* @returns std::vector of all widgets
 		*/
-		std::vector<Widget*>& GetModifiableWidgets() { return m_Widgets; }
+		//std::map<const std::string_view, Widget*>& GetModifiableWidgets() { return m_Widgets; }
 
 	private:
-		std::vector<Widget*> m_Widgets;
+		std::map<const std::string_view, Widget*> m_Widgets;
 
 		struct WindowData
 		{
