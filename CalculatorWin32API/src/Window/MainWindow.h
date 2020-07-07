@@ -11,7 +11,7 @@
 #include "Calculator/Calculator.h"
 
 
-#define BIND_EVENT_FN(func) [this](Calculator::Event& e) { func(e); }
+#define BIND_EVENT_FN(func) [this](Calculator::Event& e) { this->func(e); }
 
 namespace Calculator
 {
@@ -70,7 +70,8 @@ namespace Calculator
 		* Sets the event callback function which is called when an event is received
 		* Dispatches all Events to Application
 		*/
-		void SetEventCallback(const EventCallbackFn& eCFn) { m_WinData.eventCallback = eCFn; }
+		//void SetEventCallback(const EventCallbackFn& eCFn) { m_WinData.eventCallback = eCFn; }
+		[[noreturn]] void SetEventCallback(void(*eCFn)(Event&)) { m_WinData.eventCallback = eCFn; }
 
 		/**
 		* Getter for the std::vector which stores all widgets

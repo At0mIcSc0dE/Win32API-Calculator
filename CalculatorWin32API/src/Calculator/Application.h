@@ -10,11 +10,10 @@
 
 namespace Calculator
 {
-
 	class CL_API Application
 	{
 	protected:
-		Application() : m_Win() {}
+		Application() : m_Win{}, m_AppData{} {}
 	
 	public:
 		
@@ -84,7 +83,9 @@ namespace Calculator
 		/**
 		* Sets the event callback function which is called when an event is received
 		*/
-		[[noreturn]] void SetEventCallback(const EventCallbackFn& eCFn) { m_AppData.eventCallback = eCFn; }
+		//[[noreturn]] void SetEventCallback(const EventCallbackFn eCFn) { m_AppData.eventCallback = eCFn; }
+		[[noreturn]] void SetEventCallback(void(*eCFn)(Event&)) { m_AppData.eventCallback = eCFn; }
+
 
 		Application(const Application& app) = delete;
 		Application operator=(const Application& app) = delete;
@@ -107,7 +108,6 @@ namespace Calculator
 		ApplicationData m_AppData;
 	};
 
-	
 	template<typename WIDGET, typename ...Args>
 	inline WIDGET* Application::AddWidget(Args ...args)
 	{
@@ -130,7 +130,6 @@ namespace Calculator
 			return (WIDGET&)*m_Win.GetWidgets()[index];
 		else
 			throw std::bad_cast();
-
 	}
 
 }

@@ -50,9 +50,23 @@ public:
 private:
 	Calculator::Application& m_Application;
 
-	Calculator::Button* m_Btn1;
-	Calculator::Button* m_Btn2;
-	Calculator::Button* m_Btn3;
-	Calculator::Textfield* m_Txt1;
+	Calculator::Button* m_Btn1 = nullptr;
+	Calculator::Button* m_Btn2 = nullptr;
+	Calculator::Button* m_Btn3 = nullptr;
+	Calculator::Button* m_Btn4 = nullptr;
+	Calculator::Button* m_Btn5 = nullptr;
+	Calculator::Button* m_Btn6 = nullptr;
+	Calculator::Button* m_Btn7 = nullptr;
+	Calculator::Button* m_Btn8 = nullptr;
+	Calculator::Button* m_Btn9 = nullptr;
+	Calculator::Button* m_Btn0 = nullptr;
+	Calculator::Button* m_BtnEquals = nullptr;
+	Calculator::Button* m_BtnPlus = nullptr;
+	Calculator::Button* m_BtnMinus = nullptr;
+	Calculator::Button* m_BtnTimes = nullptr;
+	Calculator::Button* m_BtnDivide = nullptr;
+	Calculator::Button* m_BtnClear = nullptr;
+
+	Calculator::Textfield* m_TxtCalc;
 };
 
