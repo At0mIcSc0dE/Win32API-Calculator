@@ -49,5 +49,10 @@ public:
 
 private:
 	Calculator::Application& m_Application;
+
+	Calculator::Button* m_Btn1;
+	Calculator::Button* m_Btn2;
+	Calculator::Button* m_Btn3;
+	Calculator::Textfield* m_Txt1;
 };
 

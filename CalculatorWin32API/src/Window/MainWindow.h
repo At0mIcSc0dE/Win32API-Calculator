@@ -77,17 +77,17 @@ namespace Calculator
 		*
 		* @returns const std::vector of all widgets
 		*/
-		std::map<const std::string_view, Widget*>& GetWidgets() { return m_Widgets; }
+		std::vector<Widget*>& GetWidgets() { return m_Widgets; }
 
 		/**
 		* Getter for the std::vector which stores all widgets
 		*
 		* @returns std::vector of all widgets
 		*/
-		//std::map<const std::string_view, Widget*>& GetModifiableWidgets() { return m_Widgets; }
+		//std::vector<Widget*>& GetModifiableWidgets() { return m_Widgets; }
 
 	private:
-		std::map<const std::string_view, Widget*> m_Widgets;
+		std::vector<Widget*> m_Widgets;
 
 		struct WindowData
 		{

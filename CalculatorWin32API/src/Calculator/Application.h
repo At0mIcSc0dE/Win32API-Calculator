@@ -43,13 +43,13 @@ namespace Calculator
 		*
 		* @param name is the name which the widget will be accesible in the unordered_map
 		* @param args are the arguments to initialize the widget
-		* @returns false if incorrect arguments for WIDGET type were provided
+		* @returns the new widget
 		*
+		* @note there's no need to assign a widget to a variable by the client, they can use the index in the Calculator::MainWindow::m_Widgets
 		* @warning EXPERIMENTAL APPROACH
-		* @warning currently does not return false when passing the wrong arguments
 		*/
 		template<typename WIDGET, typename... Args>
-		bool AddWidget(Args... args);
+		WIDGET* AddWidget(Args... args);
 
 		/**
 		* Receives all Events,  
@@ -74,7 +74,7 @@ namespace Calculator
 		* @throws std::bad_cast if widgets[index] can't be casted to WIDGET
 		*/
 		template<typename WIDGET>
-		const WIDGET& CastToWidget(const std::string& name);
+		const WIDGET& CastToWidget(const int index);
 
 		/**
 		* Destructor for application
@@ -94,7 +94,7 @@ namespace Calculator
 		*
 		* @returns a vector of all the widgets in the window
 		*/
-		std::map<const std::string_view, Widget*>& GetWidgets() { return m_Win.GetWidgets(); }
+		std::vector<Widget*>& GetWidgets() { return m_Win.GetWidgets(); }
 
 	private:
 		static Application* m_Application;
@@ -109,26 +109,25 @@ namespace Calculator
 
 	
 	template<typename WIDGET, typename ...Args>
-	inline bool Application::AddWidget(Args ...args)
+	inline WIDGET* Application::AddWidget(Args ...args)
 	{
 		WIDGET* widget = new WIDGET;
 		widget->Init(args...);
-		//m_Win.GetModifiableWidgets().emplace_back(std::move(widget));
-		m_Win.GetWidgets().insert({ "h", std::move(widget) });
-		auto& vec = m_Win.GetWidgets();
-
-		return true;
+		m_Win.GetWidgets().emplace_back(widget);
+		//m_Win.GetWidgets().insert({ "h", std::move(widget) });
+		
+		return std::move(widget);
 	}
 
 	template<typename WIDGET>
-	inline const WIDGET& Application::CastToWidget(const std::string& name)
+	inline const WIDGET& Application::CastToWidget(const int index)
 	{
 		//if (WIDGET::GetStaticWidgetType() == m_Win.GetWidgets()[index]->GetWidgetType())
 		//	return (WIDGET&)*m_Win.GetWidgets()[index];
 		//else
 		//	throw std::bad_cast();
-		if (WIDGET::GetStaticWidgetType() == m_Win.GetWidgets()["name"]->GetWidgetType())
-			return (WIDGET&)*m_Win.GetWidgets()["h"];
+		if (WIDGET::GetStaticWidgetType() == m_Win.GetWidgets()[index]->GetWidgetType())
+			return (WIDGET&)*m_Win.GetWidgets()[index];
 		else
 			throw std::bad_cast();
 
