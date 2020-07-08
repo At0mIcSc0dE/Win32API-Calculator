@@ -13,8 +13,8 @@ namespace Calculator
 	class CL_API Application
 	{
 	protected:
-		Application() : m_Win{}, m_AppData{} {}
-	
+		Application();
+
 	public:
 		
 		/**
@@ -84,7 +84,7 @@ namespace Calculator
 		* Sets the event callback function which is called when an event is received
 		*/
 		//[[noreturn]] void SetEventCallback(const EventCallbackFn eCFn) { m_AppData.eventCallback = eCFn; }
-		[[noreturn]] void SetEventCallback(const EventCallbackFn& eCFn) { m_AppData.eventCallback = eCFn; }
+		void SetEventCallback(const EventCallbackFn& eCFn) { m_AppData.eventCallback = eCFn; }
 
 
 		Application(const Application& app) = delete;
@@ -112,6 +112,7 @@ namespace Calculator
 	inline WIDGET* Application::AddWidget(Args ...args)
 	{
 		WIDGET* widget = new WIDGET;
+		ASSERT(widget);
 		widget->Init(args...);
 		m_Win.GetWidgets().emplace_back(widget);
 		//m_Win.GetWidgets().insert({ "h", std::move(widget) });

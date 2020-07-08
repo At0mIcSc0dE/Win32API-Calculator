@@ -69,7 +69,7 @@ namespace Calculator
 		* Dispatches all Events to Application
 		*/
 		//void SetEventCallback(const EventCallbackFn& eCFn) { m_WinData.eventCallback = eCFn; }
-		[[noreturn]] void SetEventCallback(const EventCallbackFn& eCFn) { m_WinData.eventCallback = eCFn; }
+		void SetEventCallback(const EventCallbackFn& eCFn) { m_WinData.eventCallback = eCFn; }
 
 		/**
 		* Getter for the std::vector which stores all widgets
