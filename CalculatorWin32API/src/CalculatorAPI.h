@@ -13,3 +13,6 @@
 #include "Calculator/Calculator.h"
 #include "Calculator/Event/Event.h"
 
+
+//TEMPORARY
+#include "Calculator/Logger/Logger.h"

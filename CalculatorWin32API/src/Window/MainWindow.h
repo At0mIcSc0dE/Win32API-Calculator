@@ -11,8 +11,6 @@
 #include "Calculator/Calculator.h"
 
 
-#define BIND_EVENT_FN(func) [this](Calculator::Event& e) { this->func(e); }
-
 namespace Calculator
 {
 
@@ -26,7 +24,7 @@ namespace Calculator
 		* @returns MainWindow instance
 		*/
 		MainWindow()
-			:m_Widgets{} {}
+			:m_Widgets{} { CL_LOG("MainWindow Constructor called"); }
 
 		/**
 		* Function is called by WindowProc in BaseWindow class. 
@@ -71,7 +69,7 @@ namespace Calculator
 		* Dispatches all Events to Application
 		*/
 		//void SetEventCallback(const EventCallbackFn& eCFn) { m_WinData.eventCallback = eCFn; }
-		[[noreturn]] void SetEventCallback(void(*eCFn)(Event&)) { m_WinData.eventCallback = eCFn; }
+		[[noreturn]] void SetEventCallback(const EventCallbackFn& eCFn) { m_WinData.eventCallback = eCFn; }
 
 		/**
 		* Getter for the std::vector which stores all widgets

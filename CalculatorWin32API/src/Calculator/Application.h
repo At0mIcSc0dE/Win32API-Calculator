@@ -84,7 +84,7 @@ namespace Calculator
 		* Sets the event callback function which is called when an event is received
 		*/
 		//[[noreturn]] void SetEventCallback(const EventCallbackFn eCFn) { m_AppData.eventCallback = eCFn; }
-		[[noreturn]] void SetEventCallback(void(*eCFn)(Event&)) { m_AppData.eventCallback = eCFn; }
+		[[noreturn]] void SetEventCallback(const EventCallbackFn& eCFn) { m_AppData.eventCallback = eCFn; }
 
 
 		Application(const Application& app) = delete;

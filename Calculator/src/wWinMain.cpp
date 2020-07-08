@@ -10,6 +10,9 @@ void* operator new(size_t size)
 
 int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR nCmdLine, int nCmdShow)
 {
+	Calculator::CL_CLEAR();
+	Calculator::CL_LOG("Application started");
+	
 	Sandbox sandbox;
 	sandbox.Init(nCmdShow);
 

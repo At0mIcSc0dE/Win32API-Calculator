@@ -9,7 +9,8 @@ Sandbox::Sandbox()
 bool Sandbox::Init(const int& nCmdShow)
 {
 	m_Application.Init(nCmdShow);
-	m_Application.SetEventCallback(BIND_EVENT_FN(OnEvent));
+	//m_Application.SetEventCallback(BIND_EVENT_FN(OnEvent));
+	m_Application.SetEventCallback([&](Calculator::Event& e) { this->OnEvent(e); });
 	AddWidgets();
 	return true;
 }
@@ -21,7 +22,7 @@ void Sandbox::Run()
 
 void Sandbox::AddWidgets()
 {
-	m_TxtCalc = m_Application.AddWidget<Calculator::Textfield>(L"txt1", 0, 0, 320, 171, m_Application.GetMainWindow().GetHWND());	//320, 503 -> total windoww
+	m_TxtCalc	=	m_Application.AddWidget<Calculator::Textfield>(L"txt1", 0, 0, 320, 171, m_Application.GetMainWindow().GetHWND());	//320, 503 -> total windoww
 
 	m_Btn7		=	m_Application.AddWidget<Calculator::Button>(L"7", 0,   171, 80, 83, m_Application.GetMainWindow().GetHWND());
 	m_Btn8		=	m_Application.AddWidget<Calculator::Button>(L"8", 80,  171, 80, 83, m_Application.GetMainWindow().GetHWND());

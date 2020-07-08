@@ -67,6 +67,6 @@ private:
 	Calculator::Button* m_BtnDivide = nullptr;
 	Calculator::Button* m_BtnClear = nullptr;
 
-	Calculator::Textfield* m_TxtCalc;
+	Calculator::Textfield* m_TxtCalc = nullptr;
 };
 
