@@ -1,5 +1,5 @@
-[21:27:0]: Application started
-[21:27:0]: MainWindow Constructor called
-[21:27:0]: Assertion in file D:\dev\Cpp\Projects\CalculatorWin32API\CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
-[21:27:0]: Assertion in file D:\dev\Cpp\Projects\CalculatorWin32API\CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
-[21:27:0]: Assertion in file D:\dev\Cpp\Projects\CalculatorWin32API\CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
+[21:33:30]: Application started
+[21:33:30]: MainWindow Constructor called
+[21:33:30]: Assertion in file D:\dev\Cpp\Projects\CalculatorWin32API\CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
+[21:33:30]: Assertion in file D:\dev\Cpp\Projects\CalculatorWin32API\CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
+[21:33:30]: Assertion in file D:\dev\Cpp\Projects\CalculatorWin32API\CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
