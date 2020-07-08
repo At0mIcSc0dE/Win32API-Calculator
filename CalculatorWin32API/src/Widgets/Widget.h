@@ -34,17 +34,17 @@ namespace Calculator
 		* @param width is the target widget width
 		* @param height is the target widget height
 		*/
-		[[noreturn]] virtual void Resize(const int& width, const int& height) = 0;
+		virtual void Resize(int width, int height) = 0;
 
 		/**
 		* Hides the widget after it was shown, does nothing if button is already hidden
 		*/
-		[[noreturn]] virtual void Show() const = 0;
+		virtual void Show() const = 0;
 
 		/**
 		* Shows the widget after it was hidden, does nothing if button is already displayed
 		*/
-		[[noreturn]] virtual void Hide() const = 0;
+		virtual void Hide() const = 0;
 
 		/**
 		* Gets the current widget type, e.g. Button, Textbox, Checkbox...
@@ -67,7 +67,7 @@ namespace Calculator
 		*@see Calculator::Application::AddWidget
 		*@returns the current widget's ID
 		*/
-		virtual const int& GetID() const = 0;
+		virtual int GetID() const = 0;
 
 		/**
 		* Getter for widget HWND

@@ -20,23 +20,23 @@ public:
 	* @warning does not currently return anything other than true
 	*/
 	bool Init(
-		_In_ const int& nCmdShow
+		_In_ int nCmdShow
 	);
 	
 	/**
 	* Enters the application event loop
 	*/
-	[[noreturn]] void Run();
+	void Run();
 	
 	/**
 	* Adds all widgets defined in function definition to application
 	*/
-	[[noreturn]] void AddWidgets();
+	void AddWidgets();
 
 	/**
 	* Receives all events from Calculator::Application, should dispatch them to seperate functions
 	*/
-	[[noreturn]] virtual void OnEvent(Calculator::Event& e) override;
+	virtual void OnEvent(Calculator::Event& e) override;
 
 	/**
 	* Getter for the application

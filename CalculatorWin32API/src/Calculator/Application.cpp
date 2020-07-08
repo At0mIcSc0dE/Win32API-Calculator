@@ -17,12 +17,11 @@ namespace Calculator
 		m_Application = this;
 	}
 
-	bool Application::Init(const int& nCmdShow)
+	bool Application::Init(int nCmdShow)
 	{
-		//m_Win.SetEventCallback(BIND_EVENT_FN(OnEvent));
 		ASSERT(&m_Win);
 		ASSERT(m_Application);
-		m_Win.SetEventCallback([&](Event& e) { m_Application->OnEvent(e); });
+		m_Win.SetEventCallback(BIND_EVENT_CALLBACK_FN(OnEvent));
 		if (!m_Win.CreateMainWindow(L"Calculator", WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX, 0UL, CW_USEDEFAULT, CW_USEDEFAULT, 0x14F, 0x21E))	//335, 542
 		{
 			return false;

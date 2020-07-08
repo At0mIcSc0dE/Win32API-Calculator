@@ -9,7 +9,7 @@
 namespace Calculator
 {
 
-	void Button::Init(const LPCWSTR& text, const Rect& rect, HWND& parent, const int& flags)
+	void Button::Init(const LPCWSTR& text, const Rect& rect, HWND& parent, int flags)
 	{
 		m_WidgetID = s_NextID;
 		++s_NextID;
@@ -18,7 +18,7 @@ namespace Calculator
 			parent, (HMENU)m_WidgetID, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL);
 	}
 
-	void Button::Init(const LPCWSTR& text, const int& x, const int& y, const int& width, const int& height, HWND& parent, const int& flags)
+	void Button::Init(const LPCWSTR& text, int x, int y, int width, int height, HWND& parent, int flags)
 	{
 		m_WidgetID = s_NextID;
 		++s_NextID;
@@ -27,7 +27,7 @@ namespace Calculator
 			parent, (HMENU)m_WidgetID, (HINSTANCE)GetWindowLongPtr(parent, GWLP_HINSTANCE), NULL);
 	}
 
-	void Button::Resize(const int& width, const int& height)
+	void Button::Resize(int width, int height)
 	{
 		//TODO: To be implemented
 	}

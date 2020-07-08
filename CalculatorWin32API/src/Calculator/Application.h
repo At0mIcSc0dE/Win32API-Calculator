@@ -24,7 +24,7 @@ namespace Calculator
 		* @see const MainWindow& GetMainWindow() const function
 		*/
 		bool Init(
-			_In_ const int& nCmdShow
+			_In_ int nCmdShow
 		);
 
 		/**
@@ -117,7 +117,8 @@ namespace Calculator
 		m_Win.GetWidgets().emplace_back(widget);
 		//m_Win.GetWidgets().insert({ "h", std::move(widget) });
 		
-		return std::move(widget);
+		//return std::move(widget);
+		return widget;
 	}
 
 	template<typename WIDGET>

@@ -23,11 +23,11 @@ namespace Calculator
 		* @param rect is the textfield's transform
 		* @param parent is the parent, often the main window
 		*/
-		[[noreturn]] void Init(
+		void Init(
 			_In_ const LPCWSTR& name,
 			_In_ const Rect& rect,
 			_In_ HWND& parent,
-			_In_opt_ const int& flags = WS_CHILD | WS_VISIBLE | WS_BORDER
+			_In_opt_ int flags = WS_CHILD | WS_VISIBLE | WS_BORDER
 		);
 		
 		/**
@@ -40,14 +40,14 @@ namespace Calculator
 		* @param height is the textfield's height
 		* @param parent is the parent, often the main window
 		*/
-		[[noreturn]] void Init(
+		void Init(
 			_In_ const LPCWSTR& name, 
-			_In_ const int& x, 
-			_In_ const int& y, 
-			_In_ const int& width,
-			_In_ const int& height, 
+			_In_ int x, 
+			_In_ int y, 
+			_In_ int width,
+			_In_ int height, 
 			_In_ HWND& parent, 
-			_In_opt_ const int& flags = WS_CHILD | WS_VISIBLE | WS_BORDER
+			_In_opt_ int flags = WS_CHILD | WS_VISIBLE | WS_BORDER
 		);
 
 		/**
@@ -56,20 +56,20 @@ namespace Calculator
 		* @param width is the target button width
 		* @param height is the target button height
 		*/
-		[[noreturn]] virtual void Resize(
-			_In_ const int& width,
-			_In_ const int& height
+		virtual void Resize(
+			_In_ int width,
+			_In_ int height
 		) override;
 
 		/**
 		* Hides the button after it was shown, does nothing if button is already hidden
 		*/
-		[[noreturn]] virtual void Hide() const override;
+		virtual void Hide() const override;
 		
 		/**
 		* Shows the button after it was hidden, does nothing if button is already displayed
 		*/
-		[[noreturn]] virtual void Show() const override;
+		virtual void Show() const override;
 
 
 		/**
@@ -77,7 +77,7 @@ namespace Calculator
 		*
 		* @param text is the new button text
 		*/
-		[[noreturn]] void SetText(
+		void SetText(
 			_In_ const LPCWSTR& text
 		);
 		
@@ -107,7 +107,7 @@ namespace Calculator
 		*
 		* @returns the current textfield's textfieldID
 		*/
-		virtual const int& GetID() const override { return m_WidgetID; }
+		virtual int GetID() const override { return m_WidgetID; }
 
 		/**
 		* Getter for textfield's HWND

@@ -10,7 +10,3 @@
 #else
 	#error "Calculator only supports Windows" 
 #endif
-
-
-//TEMPORARY
-#include "Calculator/Logger/Logger.h"

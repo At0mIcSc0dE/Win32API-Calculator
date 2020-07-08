@@ -26,11 +26,11 @@ namespace Calculator
 		* @param rect is the button's transform
 		* @param parent is the parent, often the main window
 		*/
-		[[noreturn]] void Init(
+		void Init(
 			_In_ const LPCWSTR& text, 
 			_In_ const Rect& rect, 
 			_In_ HWND& parent, 
-			_In_opt_ const int& flags = WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON
+			_In_opt_ int flags = WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON
 		);
 
 		/**
@@ -43,14 +43,14 @@ namespace Calculator
 		* @param height is the button's height
 		* @param parent is the parent, often the main window
 		*/
-		[[noreturn]] void Init(
+		void Init(
 			_In_ const LPCWSTR& text,
-			_In_ const int& x,
-			_In_ const int& y,
-			_In_ const int& width,
-			_In_ const int& height,
+			_In_ int x,
+			_In_ int y,
+			_In_ int width,
+			_In_ int height,
 			_In_ HWND& parent,
-			_In_opt_ const int& flags = WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON
+			_In_opt_ int flags = WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON
 		);
 
 		/**
@@ -59,27 +59,27 @@ namespace Calculator
 		* @param width is the target button width
 		* @param height is the target button height
 		*/
-		[[noreturn]] virtual void Resize(
-			_In_ const int& width, 
-			_In_ const int& height
+		virtual void Resize(
+			_In_ int width, 
+			_In_ int height
 		) override;
 
 		/**
 		* Hides the button after it was shown, does nothing if button is already hidden
 		*/
-		[[noreturn]] virtual void Hide() const override;
+		virtual void Hide() const override;
 
 		/**
 		* Shows the button after it was hidden, does nothing if button is already displayed
 		*/
-		[[noreturn]] virtual void Show() const override;
+		virtual void Show() const override;
 
 		/**
 		* Sets text which is displayed when the button is rendered
 		*
 		* @param text is the new button text
 		*/
-		[[noreturn]] void SetText(
+		void SetText(
 			_In_ const LPCWSTR& text
 		);
 
@@ -109,7 +109,7 @@ namespace Calculator
 		*
 		* @returns the current button's buttonID
 		*/
-		virtual const int& GetID() const override { return m_WidgetID; }
+		virtual int GetID() const override { return m_WidgetID; }
 
 		/**
 		* Getter for button HWND
