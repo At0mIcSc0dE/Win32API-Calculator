@@ -30,7 +30,7 @@ namespace Calculator
 		/**
 		* Starts application loop
 		*/
-		[[noreturn]] void Run();
+		void Run();
 
 		/**
 		* Static function to get static Application instance
@@ -83,7 +83,6 @@ namespace Calculator
 		/**
 		* Sets the event callback function which is called when an event is received
 		*/
-		//[[noreturn]] void SetEventCallback(const EventCallbackFn eCFn) { m_AppData.eventCallback = eCFn; }
 		void SetEventCallback(const EventCallbackFn& eCFn) { m_AppData.eventCallback = eCFn; }
 
 

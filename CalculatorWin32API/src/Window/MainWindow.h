@@ -24,7 +24,7 @@ namespace Calculator
 		* @returns MainWindow instance
 		*/
 		MainWindow()
-			:m_Widgets{} { CL_LOG("MainWindow Constructor called"); }
+			:m_Widgets{} {}
 
 		/**
 		* Function is called by WindowProc in BaseWindow class. 
