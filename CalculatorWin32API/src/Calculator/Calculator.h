@@ -4,7 +4,7 @@
 #pragma once
 
 #include "pch.h"
-#include "Calculator/Logger/Logger.h"
+#include "Calculator/Debug/Logger.h"
 
 
 #define ID(Event)						LOWORD(Event)
@@ -14,7 +14,7 @@
 
 
 #ifdef CL_ASSERT_ENABLED
-	#define ASSERT(x) if(!(x)) { CL_LOG(std::string("Assertion in file ") + std::string(__FILE__) + std::string(" (") + std::to_string(__LINE__) + std::string(") failed")); __debugbreak(); } else { CL_LOG(std::string("Assertion in file ") + std::string(__FILE__) + std::string(" (") + std::to_string(__LINE__) + std::string(") succeded")); }
+	#define ASSERT(x) if(!(x)) { CL_LOG(std::string("Assertion in file ") + std::string(__FILE__).replace(0, 39, "") + std::string(" (") + std::to_string(__LINE__) + std::string(") failed")); __debugbreak(); } else { CL_LOG(std::string("Assertion in file ") + std::string(__FILE__).replace(0, 39, "") + std::string(" (") + std::to_string(__LINE__) + std::string(") succeded")); }
 #else
 	#define ASSERT(x)
 #endif

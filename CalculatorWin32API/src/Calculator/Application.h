@@ -6,6 +6,7 @@
 
 #include "Core.h"
 #include "Window/MainWindow.h"
+#include "Debug/Timer.h"
 
 
 namespace Calculator
@@ -110,6 +111,7 @@ namespace Calculator
 	template<typename WIDGET, typename ...Args>
 	inline WIDGET* Application::AddWidget(Args ...args)
 	{
+		TIMER;
 		WIDGET* widget = new WIDGET;
 		ASSERT(widget);
 		widget->Init(args...);
