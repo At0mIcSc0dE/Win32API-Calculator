@@ -10,3 +10,7 @@
 #else
 	#error "Calculator only supports Windows" 
 #endif
+
+
+#define CL_LOG_ACTIVE 1
+#define CL_TIMER_ACTIVE 0

@@ -125,10 +125,6 @@ namespace Calculator
 	template<typename WIDGET>
 	inline const WIDGET& Application::CastToWidget(const int index)
 	{
-		//if (WIDGET::GetStaticWidgetType() == m_Win.GetWidgets()[index]->GetWidgetType())
-		//	return (WIDGET&)*m_Win.GetWidgets()[index];
-		//else
-		//	throw std::bad_cast();
 		if (WIDGET::GetStaticWidgetType() == m_Win.GetWidgets()[index]->GetWidgetType())
 			return (WIDGET&)*m_Win.GetWidgets()[index];
 		else

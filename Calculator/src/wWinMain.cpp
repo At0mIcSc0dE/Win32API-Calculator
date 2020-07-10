@@ -1,6 +1,7 @@
 #include "Sandbox.h"
 
-int allocsize = 0;
+
+size_t allocsize = 0;
 void* operator new(size_t size)
 {
 	allocsize += size;
@@ -10,17 +11,17 @@ void* operator new(size_t size)
 
 int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR nCmdLine, int nCmdShow)
 {
-	Calculator::CL_CLEAR();
-	Calculator::CL_LOG("Application started");
+	CL_CLEAR();
+	CL_LOG("Application started");
 	
 	Sandbox sandbox;
 	sandbox.Init(nCmdShow);
 
 	sandbox.Run();
 
-	wchar_t buff[256];
-	wsprintfW(buff, L"%d", allocsize);
-	MessageBox(NULL, buff, buff, NULL);
+	std::stringstream ss;
+	ss << "Application allocated " << allocsize << " bytes of memory";
+	CL_LOG(ss.str());		//- approx. 184 bytes for logging
 
 	return 0;
 

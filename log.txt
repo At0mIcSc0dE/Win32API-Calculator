@@ -1,40 +1,8 @@
-[8:13:48]: Application started
-[8:13:48]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
-[8:13:48]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::Sandbox, line 7 took 0us
-[8:13:48]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
-[8:13:48]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
-[8:13:48]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::OnEvent, line 71 took 1us
-[8:13:48]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::OnEvent, line 71 took 1us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 1714us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 905us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 619us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 503us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 605us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 536us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 672us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 697us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 388us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 346us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 479us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 467us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 353us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 390us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 422us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 555us
-[8:13:48]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 114 took 385us
-[8:13:48]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::AddWidgets, line 26 took 13693us
-[8:13:48]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::Init, line 12 took 44889us
-[8:14:0]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::TestFn, line 53 took 5171844us
-[8:14:0]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::OnEvent, line 71 took 5172432us
-[8:14:1]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::TestFn, line 53 took 0us
-[8:14:1]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::OnEvent, line 71 took 308us
-[8:14:1]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::TestFn, line 53 took 0us
-[8:14:1]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::OnEvent, line 71 took 270us
-[8:14:2]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::TestFn, line 53 took 0us
-[8:14:2]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::OnEvent, line 71 took 262us
-[8:14:4]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::TestFn, line 53 took 1551137us
-[8:14:4]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::OnEvent, line 71 took 1551511us
-[8:14:4]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::TestFn, line 53 took 647134us
-[8:14:4]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::OnEvent, line 71 took 647398us
-[8:14:5]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::TestFn, line 53 took 1257656us
-[8:14:5]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::OnEvent, line 71 took 1266338us
+[18:6:43]: Application started
+[18:6:43]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
+[18:6:43]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
+[18:6:43]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
+[18:6:45]: Application allocated 184 bytes of memory
+[18:7:19]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
+[18:7:19]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
+[18:7:19]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
