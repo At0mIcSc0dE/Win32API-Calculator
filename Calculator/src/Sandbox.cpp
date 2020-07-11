@@ -55,6 +55,7 @@ bool Sandbox::TestFn(Calculator::Event& e, const Calculator::Widget* w)
 	if (button == m_BtnEquals)
 	{
 		// Call evaluater here
+		Eval::Evaluate()
 		return true;
 	}
 	else if (button == m_BtnClear)
