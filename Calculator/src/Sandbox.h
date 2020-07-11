@@ -45,28 +45,28 @@ public:
 	*/
 	Calculator::Application& GetApplication() const { return m_Application; }
 
-	bool TestFn(Calculator::Event& e);
+	bool TestFn(Calculator::Event& e, const Calculator::Widget* w);
 
 private:
 	Calculator::Application& m_Application;
 
-	Calculator::Button* m_Btn1;
-	Calculator::Button* m_Btn2;
-	Calculator::Button* m_Btn3;
-	Calculator::Button* m_Btn4;
-	Calculator::Button* m_Btn5;
-	Calculator::Button* m_Btn6;
-	Calculator::Button* m_Btn7;
-	Calculator::Button* m_Btn8;
-	Calculator::Button* m_Btn9;
-	Calculator::Button* m_Btn0;
-	Calculator::Button* m_BtnEquals;
-	Calculator::Button* m_BtnPlus;
-	Calculator::Button* m_BtnMinus;
-	Calculator::Button* m_BtnTimes;
-	Calculator::Button* m_BtnDivide;
-	Calculator::Button* m_BtnClear;
+	Calculator::Button*		m_Btn1;
+	Calculator::Button*		m_Btn2;
+	Calculator::Button*		m_Btn3;
+	Calculator::Button*		m_Btn4;
+	Calculator::Button*		m_Btn5;
+	Calculator::Button*		m_Btn6;
+	Calculator::Button*		m_Btn7;
+	Calculator::Button*		m_Btn8;
+	Calculator::Button*		m_Btn9;
+	Calculator::Button*		m_Btn0;
+	Calculator::Button*		m_BtnEquals;
+	Calculator::Button*		m_BtnPlus;
+	Calculator::Button*		m_BtnMinus;
+	Calculator::Button*		m_BtnTimes;
+	Calculator::Button*		m_BtnDivide;
+	Calculator::Button*		m_BtnClear;
 
-	Calculator::Textfield* m_TxtCalc;
+	Calculator::Textfield*	m_TxtCalc;
 };
 

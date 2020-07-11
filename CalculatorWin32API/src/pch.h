@@ -8,6 +8,8 @@
 #include <winerror.h>
 #include <atlbase.h>
 #include <WinUser.h>
+#include <wchar.h>
+
 
 #include <string>
 #include <vector>

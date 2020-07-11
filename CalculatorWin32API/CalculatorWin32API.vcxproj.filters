@@ -24,9 +24,6 @@
     <ClCompile Include="src\Calculator\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Calculator\StringEvaluator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Widgets\Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,9 +51,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Calculator\Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Calculator\StringEvaluator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Widgets\Button.h">

@@ -80,8 +80,15 @@ namespace Calculator
 		* @param text is the new button text
 		*/
 		void SetText(
-			_In_ const LPCWSTR& text
+			_In_ const std::wstring& text
 		);
+
+		/**
+		* Getter for the current button's text
+		*
+		* @returns the current button's text
+		*/
+		const std::wstring GetText() const;
 
 		/**
 		* Function to get the current widget type, in this case Button
@@ -102,7 +109,7 @@ namespace Calculator
 		*
 		* @returns L"Button"
 		*/
-		virtual const wchar_t* GetName() const override { return L"Button"; }
+		virtual const std::wstring GetName() const override { return L"Button"; }
 
 		/**
 		* Getter for buttonID
@@ -121,6 +128,7 @@ namespace Calculator
 	private:
 		HWND m_hWnd;
 		int m_WidgetID;
+		HFONT m_hFont;
 	};
 
 }

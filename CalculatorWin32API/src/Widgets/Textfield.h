@@ -78,9 +78,16 @@ namespace Calculator
 		* @param text is the new button text
 		*/
 		void SetText(
-			_In_ const LPCWSTR& text
+			_In_ const std::wstring& text
 		);
 		
+		/**
+		* Getter for the current textboxes text
+		*
+		* @returns the current textboxes text
+		*/
+		const std::wstring GetText() const;
+
 		/**
 		* Function to get the current widget type, in this case Textfield
 		*
@@ -100,7 +107,7 @@ namespace Calculator
 		*
 		* @returns L"Textfield"
 		*/
-		virtual const wchar_t* GetName() const { return L"Textfield"; }
+		virtual const std::wstring GetName() const { return L"Textfield"; }
 
 		/**
 		* Getter for textfieldID
@@ -119,6 +126,7 @@ namespace Calculator
 	private:
 		HWND m_hWnd;
 		int m_WidgetID;
+		HFONT m_hFont;
 	};
 
 }

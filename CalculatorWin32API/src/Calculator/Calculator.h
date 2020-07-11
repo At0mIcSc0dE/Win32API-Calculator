@@ -10,7 +10,7 @@
 #define ID(Event)						LOWORD(Event)
 
 #define BIND_EVENT_CALLBACK_FN(func)	[this](Calculator::Event& e) { this->func(e); }
-#define BIND_EVENT_FN(func)				[this](Calculator::Event& e) { return this->func(e); }
+#define BIND_EVENT_FN(func)				[this](Calculator::Event& e, const Calculator::Widget* widget) { return this->func(e, widget); }
 
 
 #ifdef CL_ASSERT_ENABLED
@@ -23,7 +23,7 @@ namespace Calculator
 {
 
 	typedef WPARAM Event;
-	using EventFn = std::function<bool(Event&)>;
+	using EventFn = std::function<bool(Event&, const Widget*)>;
 	using EventCallbackFn = std::function<void(Event&)>;
 
 }

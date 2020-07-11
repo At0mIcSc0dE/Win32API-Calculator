@@ -49,7 +49,9 @@ namespace Calculator
 		* @warning EXPERIMENTAL APPROACH
 		*/
 		template<typename WIDGET, typename... Args>
-		WIDGET* AddWidget(Args... args);
+		WIDGET* AddWidget(
+			_In_ Args... args
+		);
 
 		/**
 		* Receives all Events,  
@@ -57,7 +59,9 @@ namespace Calculator
 		*
 		* @see Calculator::Application::SetEventCallback(const EventCallbackFn& eCFn)
 		*/
-		virtual void OnEvent(Event& e);
+		virtual void OnEvent(
+			_In_ Event& e
+		);
 
 		/**
 		* Getter for MainWindow
@@ -67,14 +71,30 @@ namespace Calculator
 		const MainWindow& GetMainWindow() const { return m_Win; }
 
 		/**
-		* Casts a object of type Widget to template argument
+		* Casts a object of type Widget to template argument, 
+		* checks if the widget is castable to template argument
 		*
 		* @param index is the widget's index in the vector
 		* @returns a reference of type WIDGET
 		* @throws std::bad_cast if widgets[index] can't be casted to WIDGET
 		*/
 		template<typename WIDGET>
-		const WIDGET& CastToWidget(const int index);
+		const WIDGET* CastToWidget(
+			_In_ const int index
+		);
+
+		/**
+		* Casts a object of type Widget to template argument, 
+		* checks if the widget is castable to template argument
+		*
+		* @param widget is the widget to be casted
+		* @returns a reference of type WIDGET
+		* @throws std::bad_cast if widget can't be casted to WIDGET
+		*/
+		template<typename WIDGET>
+		const WIDGET* CastToWidget(
+			_In_ const Widget* w
+		);
 
 		/**
 		* Destructor for application
@@ -116,17 +136,25 @@ namespace Calculator
 		ASSERT(widget);
 		widget->Init(args...);
 		m_Win.GetWidgets().emplace_back(widget);
-		//m_Win.GetWidgets().insert({ "h", std::move(widget) });
-		
-		//return std::move(widget);
 		return widget;
 	}
 
 	template<typename WIDGET>
-	inline const WIDGET& Application::CastToWidget(const int index)
+	inline const WIDGET* Application::CastToWidget(const int index)
 	{
+		TIMER;
 		if (WIDGET::GetStaticWidgetType() == m_Win.GetWidgets()[index]->GetWidgetType())
-			return (WIDGET&)*m_Win.GetWidgets()[index];
+			return (WIDGET*)m_Win.GetWidgets()[index];
+		else
+			throw std::bad_cast();
+	}
+
+	template<typename WIDGET>
+	inline const WIDGET* Application::CastToWidget(const Widget* w)
+	{
+		TIMER;
+		if (WIDGET::GetStaticWidgetType() == w->GetWidgetType())
+			return (WIDGET*)w;
 		else
 			throw std::bad_cast();
 	}

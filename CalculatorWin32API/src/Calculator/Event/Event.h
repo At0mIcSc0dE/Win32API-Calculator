@@ -26,9 +26,10 @@ namespace Calculator
 		*/
 		bool Dispatch(_In_ const EventFn& fn, _In_ Widget* w)
 		{
+			ASSERT(w);
 			if (LOWORD(m_Event) == w->GetID())
 			{
-				return fn(m_Event);
+				return fn(m_Event, w);
 			}
 			return false;
 		}

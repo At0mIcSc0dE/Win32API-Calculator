@@ -1,8 +1,39 @@
-[18:6:43]: Application started
-[18:6:43]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
-[18:6:43]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
-[18:6:43]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
-[18:6:45]: Application allocated 184 bytes of memory
-[18:7:19]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
-[18:7:19]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
-[18:7:19]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
+[10:44:1]: Application started
+[10:44:1]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
+[10:44:1]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::Sandbox, line 7 took 1us
+[10:44:1]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
+[10:44:1]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 1358us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 803us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 452us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 396us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 678us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 516us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 361us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 343us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 372us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 976us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 649us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 536us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 470us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 459us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 484us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 450us
+[10:44:1]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::AddWidget, line 134 took 368us
+[10:44:1]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::AddWidgets, line 26 took 14481us
+[10:44:1]: Timer in file Calculator\src\Sandbox.cpp, function Sandbox::Init, line 12 took 37811us
+[10:44:2]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:2]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:3]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:3]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:3]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:3]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:3]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:4]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:4]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:4]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:4]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:5]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:5]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:5]: Timer in file CalculatorWin32API\src\Calculator\Application.h, function Calculator::Application::CastToWidget, line 155 took 1us
+[10:44:6]: Application allocated 19116 bytes of memory

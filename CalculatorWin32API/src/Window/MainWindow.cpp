@@ -6,7 +6,6 @@
 
 #include "pch.h"
 #include "MainWindow.h"
-#include "Calculator/StringEvaluator.h"
 
 #include "Widgets/Button.h"
 
@@ -20,6 +19,7 @@ namespace Calculator
 		{
 		case WM_CREATE:
 		{
+			
 
 		}
 		return 0;
