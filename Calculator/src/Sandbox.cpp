@@ -55,7 +55,7 @@ bool Sandbox::TestFn(Calculator::Event& e, const Calculator::Widget* w)
 	if (button == m_BtnEquals)
 	{
 		// Call evaluater here
-		Eval::Evaluate()
+		Eval::Evaluator::Evaluate<int>(L"3+4");
 		return true;
 	}
 	else if (button == m_BtnClear)
@@ -65,6 +65,7 @@ bool Sandbox::TestFn(Calculator::Event& e, const Calculator::Widget* w)
 	}
 
 	m_TxtCalc->SetText(m_TxtCalc->GetText() + button->GetText());
+
 
 	return true;
 }

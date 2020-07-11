@@ -1,5 +1,7 @@
 #pragma once
-#include <CalculatorAPI.h>
+
+#include <Calculator/CalculatorAPI.h>
+#include <Evaluator/EvaluatorAPI.h>
 
 
 class Sandbox : public Calculator::Application
