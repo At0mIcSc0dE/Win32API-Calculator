@@ -13,4 +13,4 @@
 
 
 #define CL_LOG_ACTIVE 1
-#define CL_TIMER_ACTIVE 1
+#define CL_TIMER_ACTIVE 0

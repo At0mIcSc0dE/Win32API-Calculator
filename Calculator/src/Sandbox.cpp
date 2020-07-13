@@ -65,7 +65,7 @@ bool Sandbox::TestFn(Calculator::Event& e, const Calculator::Widget* w)
 	}
 	else if (button == m_BtnClear)
 	{
-		m_TxtCalc->SetText(L"0");
+		m_TxtCalc->SetText(L"");
 		return true;
 	}
 
