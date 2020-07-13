@@ -54,13 +54,18 @@ bool Sandbox::TestFn(Calculator::Event& e, const Calculator::Widget* w)
 	
 	if (button == m_BtnEquals)
 	{
-		// Call evaluater here
-		Eval::Evaluator::Evaluate<int>(L"3+4");
+		//TODO: Check if input is a valid term
+		int result = Eval::Evaluator::Evaluate(m_TxtCalc->GetText());
+		wchar_t resultTxt[256];
+		wsprintfW(resultTxt, L"%d", result);
+
+		m_TxtCalc->SetText(resultTxt);
+
 		return true;
 	}
 	else if (button == m_BtnClear)
 	{
-		m_TxtCalc->SetText(L"");
+		m_TxtCalc->SetText(L"0");
 		return true;
 	}
 
