@@ -1,5 +1,5 @@
-[13:38:14]: Application started
-[13:38:14]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
-[13:38:14]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
-[13:38:14]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
-[13:38:31]: Application allocated 788 bytes of memory
+[18:32:37]: Application started
+[18:32:37]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
+[18:32:37]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
+[18:32:37]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
+[18:32:48]: Application allocated 748 bytes of memory
