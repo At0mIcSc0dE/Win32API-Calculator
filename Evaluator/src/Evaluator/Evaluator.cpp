@@ -10,7 +10,17 @@ namespace Eval
 	Indices Evaluator::GetStartAndEndIndexOfFirstTerm()
 	{
 		Indices indices = {};
-		unsigned int indexOfFirstPlusOrMinus = 0;
+
+		bool termHasNoMultiplyOrDivide = true;
+
+		for (int i = 0; i < m_Term.size(); ++i)
+		{
+			if (m_Term[i] == L'*' || m_Term[i] == L'/')
+			{
+				termHasNoMultiplyOrDivide = false;
+				break;
+			}
+		}
 
 		for (unsigned int i = 0; i < m_Term.size(); ++i)
 		{
@@ -19,15 +29,10 @@ namespace Eval
 				m_Term[i] == L'*' ? m_Operation = Operations::Multiply : m_Operation = Operations::Divide;
 				return GetIndexOfNumbers(i);
 			}
-			else if (m_Term[i] == L'+' || m_Term[i] == L'-')
+			else if (termHasNoMultiplyOrDivide && (m_Term[i] == L'+' || m_Term[i] == L'-'))
 			{
 				m_Term[i] == L'+' ? m_Operation = Operations::Add : m_Operation = Operations::Subtract;
-				
-				// Index has not been found yet if it's set to 0
-				if (indexOfFirstPlusOrMinus == 0)
-				{
-					return GetIndexOfNumbers(i);
-				}
+				return GetIndexOfNumbers(i);
 				
 			}
 		}
@@ -41,7 +46,7 @@ namespace Eval
 		Numbers nums = { 0, 0 };
 
 		bool afterOperator = false;
-		for (unsigned int i = 0; i < m_Term.size(); ++i)
+		for (unsigned int i = indices.indexBeforeOperator; i < indices.indexAfterOperator + 1; ++i)
 		{
 
 			if (afterOperator && (m_Term[i] == '+' || m_Term[i] == '-' || m_Term[i] == '*' || m_Term[i] == '/'))

@@ -72,8 +72,10 @@ namespace Eval
 			break;
 		}
 
-		m_Term.replace(indices.indexBeforeOperator, indices.indexAfterOperator + 1, std::to_wstring(result));
-		Evaluate(m_Term);
+		//replaces too much!!
+		m_Term.replace(indices.indexBeforeOperator, indices.indexAfterOperator - indices.indexBeforeOperator + 1, std::to_wstring(result));
+		// return might not be necessary
+		return Evaluate(m_Term);
 	}
 
 }
