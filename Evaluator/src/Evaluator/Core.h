@@ -10,3 +10,6 @@
 	#error "Evaluator only supports windows"
 #endif
 
+
+#define EV_LOG_ACTIVE 1
+#define EV_TIMER_ACTIVE 1

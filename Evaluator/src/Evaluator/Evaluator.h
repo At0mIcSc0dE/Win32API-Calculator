@@ -6,12 +6,18 @@
 namespace Eval
 {
 
+	/**
+	* Struct containing two integers which represent the index of the first number and the index of the last number in an equation
+	*/
 	struct Indices
 	{
 		int indexBeforeOperator;
 		int indexAfterOperator;
 	};
 
+	/**
+	* Struct containing two integers which represent the two numbers of an equation
+	*/
 	struct Numbers
 	{
 		int num1;
@@ -24,13 +30,44 @@ namespace Eval
 	public:
 		Evaluator() = delete;
 
+		/**
+		* Evaluates mathematical operation
+		*
+		* @param term is the operation as std::wstring
+		* @returns the result of the equation
+		* @warn does not check if the equation is valid, might give back unexpected results
+		* @warn does not handle doubles or floats
+		*/
 		static int Evaluate(const std::wstring& term);
 		
 	private:
+		/**
+		* Figures out the starting and ending index for the first equation to be calculated, 
+		* function also sets Eval::Evaluator::m_Operation
+		*
+		* @returns the index where the first number starts and the index where the second number ends
+		*/
 		static Indices GetStartAndEndIndexOfFirstTerm();
+		
+		/**
+		* Gets the two numbers at the indices from the Eval::Evaluator::GetStartAndEndIndexOfFirstTerm function
+		*
+		* @parm indices are the indices from the Eval::Evaluator::GetStartAndEndIndexOfFirstTerm function
+		* @returns the two numbers of the equation
+		*/
 		static Numbers GetNumbers(const Indices& indices);
+		
+		/**
+		* Function is used by the Eval::Evaluator::GetStartAndEndIndexOfFirstTerm function
+		*
+		* @param operatorIndex is the index of the operator between two numbers
+		* @returns the indices of the first and second number
+		*/
 		static Indices GetIndexOfNumbers(unsigned int operatorIndex);
 
+		/**
+		* Enum defines arithmetic operations
+		*/
 		enum class Operations
 		{
 			NONE = -1, Add, Subtract, Multiply, Divide
@@ -40,41 +77,5 @@ namespace Eval
 		static std::wstring m_Term;
 
 	};
-
-	inline int Evaluator::Evaluate(const std::wstring& term)
-	{
-		m_Term = term;
-
-		Indices indices = GetStartAndEndIndexOfFirstTerm();
-
-		// Found no more operations to perform
-		if (indices.indexBeforeOperator == -1)
-		{
-			return std::stoi(m_Term);
-		}
-
-		Numbers nums = GetNumbers(indices);
-		int result = 0;
-
-		switch (m_Operation)
-		{
-		case Operations::Add:
-			result = nums.num1 + nums.num2;
-			break;
-		case Operations::Subtract:
-			result = nums.num1 - nums.num2;
-			break;
-		case Operations::Multiply:
-			result = nums.num1 * nums.num2;
-			break;
-		case Operations::Divide:
-			result = nums.num1 / nums.num2;
-			break;
-		}
-
-		m_Term.replace(indices.indexBeforeOperator, indices.indexAfterOperator - indices.indexBeforeOperator + 1, std::to_wstring(result));
-		// return might not be necessary
-		return Evaluate(m_Term);
-	}
 
 }

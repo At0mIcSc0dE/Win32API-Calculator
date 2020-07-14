@@ -1,5 +1,11 @@
-[18:32:37]: Application started
-[18:32:37]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
-[18:32:37]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
-[18:32:37]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
-[18:32:48]: Application allocated 748 bytes of memory
+[15:57:30]: Application started
+[15:57:30]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (16) succeded
+[15:57:30]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (22) succeded
+[15:57:30]: Assertion in file CalculatorWin32API\src\Calculator\Application.cpp (23) succeded
+[15:57:45]: Timer in file Evaluator\src\Evaluator\Evaluator.cpp, function Eval::Evaluator::GetIndexOfNumbers, line 128 took 7us
+[15:57:45]: Timer in file Evaluator\src\Evaluator\Evaluator.cpp, function Eval::Evaluator::GetStartAndEndIndexOfFirstTerm, line 51 took 344us
+[15:57:45]: Timer in file Evaluator\src\Evaluator\Evaluator.cpp, function Eval::Evaluator::GetNumbers, line 86 took 25us
+[15:57:45]: Timer in file Evaluator\src\Evaluator\Evaluator.cpp, function Eval::Evaluator::GetStartAndEndIndexOfFirstTerm, line 51 took 8us
+[15:57:45]: Timer in file Evaluator\src\Evaluator\Evaluator.cpp, function Eval::Evaluator::Evaluate, line 14 took 195us
+[15:57:45]: Timer in file Evaluator\src\Evaluator\Evaluator.cpp, function Eval::Evaluator::Evaluate, line 14 took 1133us
+[15:57:46]: Application allocated 716 bytes of memory
